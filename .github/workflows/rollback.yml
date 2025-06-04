@@ -1,0 +1,150 @@
+name: Rollback Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for rollback'
+        required: true
+        type: string
+      deployment_id:
+        description: 'Deployment ID to rollback to (optional)'
+        required: false
+        type: string
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      
+      - name: Get deployment info
+        id: deployment_info
+        run: |
+          # Get list of recent deployments
+          vercel list --token=${{ secrets.VERCEL_TOKEN }} --prod --json > deployments.json
+          
+          # Extract deployment URLs
+          echo "Recent production deployments:"
+          cat deployments.json | jq -r '.[] | select(.target=="production") | "\(.created) - \(.url)"' | head -10
+      
+      - name: Perform rollback
+        id: rollback
+        run: |
+          if [ -n "${{ github.event.inputs.deployment_id }}" ]; then
+            # Rollback to specific deployment
+            ROLLBACK_URL=$(vercel rollback ${{ github.event.inputs.deployment_id }} --token=${{ secrets.VERCEL_TOKEN }})
+          else
+            # Rollback to previous deployment
+            ROLLBACK_URL=$(vercel rollback --token=${{ secrets.VERCEL_TOKEN }})
+          fi
+          
+          echo "ROLLBACK_URL=$ROLLBACK_URL" >> $GITHUB_OUTPUT
+          echo "Rolled back to: $ROLLBACK_URL"
+      
+      - name: Create rollback issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🔄 Production Rollback - ${new Date().toISOString()}`,
+              body: `## Production Rollback Performed
+              
+              **Reason:** ${{ github.event.inputs.reason }}
+              **Performed by:** @${{ github.actor }}
+              **Timestamp:** ${new Date().toISOString()}
+              **Rollback URL:** ${{ steps.rollback.outputs.ROLLBACK_URL }}
+              
+              ### Next Steps
+              - [ ] Investigate the issue that caused the rollback
+              - [ ] Create hotfix if necessary
+              - [ ] Test thoroughly before redeploying
+              - [ ] Update incident report
+              
+              ### Related Information
+              - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              ${github.event.inputs.deployment_id ? `- Target deployment: ${{ github.event.inputs.deployment_id }}` : '- Rolled back to previous deployment'}
+              `,
+              labels: ['incident', 'rollback', 'production']
+            });
+            
+            console.log(`Created issue #${issue.data.number}`);
+      
+      - name: Notify Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          custom_payload: |
+            {
+              "text": "🔄 Production Rollback Performed",
+              "color": "warning",
+              "fields": [
+                {
+                  "title": "Reason",
+                  "value": "${{ github.event.inputs.reason }}",
+                  "short": false
+                },
+                {
+                  "title": "Performed by",
+                  "value": "${{ github.actor }}",
+                  "short": true
+                },
+                {
+                  "title": "Rollback URL",
+                  "value": "${{ steps.rollback.outputs.ROLLBACK_URL }}",
+                  "short": true
+                }
+              ]
+            }
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+      
+      - name: Create Sentry annotation
+        run: |
+          curl -X POST "https://sentry.io/api/0/organizations/${{ secrets.SENTRY_ORG }}/releases/" \
+            -H "Authorization: Bearer ${{ secrets.SENTRY_AUTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "version": "rollback-'$(date +%s)'",
+              "projects": ["${{ secrets.SENTRY_PROJECT }}"],
+              "refs": [{
+                "repository": "${{ github.repository }}",
+                "commit": "${{ github.sha }}"
+              }],
+              "meta": {
+                "rollback_reason": "${{ github.event.inputs.reason }}",
+                "rollback_by": "${{ github.actor }}"
+              }
+            }'
+      
+      - name: Purge CDN cache
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+      
+      - name: Run smoke tests
+        run: |
+          # Basic smoke tests on rolled back deployment
+          ROLLBACK_URL="${{ steps.rollback.outputs.ROLLBACK_URL }}"
+          
+          # Check homepage
+          curl -f -s -o /dev/null -w "%{http_code}" "$ROLLBACK_URL" || exit 1
+          
+          # Check API health
+          curl -f -s "$ROLLBACK_URL/api/health" | jq -e '.status == "healthy"' || exit 1
+          
+          echo "✅ Smoke tests passed on rolled back deployment"

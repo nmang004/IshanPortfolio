@@ -294,7 +294,7 @@ class ContentMigrator {
     // Extract comprehensive project data from HTML
     const title = this.extractProjectTitle(document, filePath)
     const description = this.extractProjectDescription(document)
-    const category = this.extractProjectCategory(document, filePath)
+    const projectCategory = this.extractProjectCategory(document, filePath)
     const researchers = this.extractResearchers(document)
     const technologies = this.extractTechnologies(document)
     const liveUrl = this.extractLiveUrl(document)
@@ -312,9 +312,6 @@ class ContentMigrator {
     // Create slug from title
     const slug = this.createSlug(title)
     
-    // Determine category from filename or content
-    const category = this.determineCategory(filePath, document)
-    
     // Validate data
     const projectData = ProjectMigrationSchema.parse({
       title,
@@ -325,7 +322,7 @@ class ContentMigrator {
       images,
       liveUrl,
       githubUrl,
-      category,
+      category: projectCategory,
     })
     
     // Create Sanity document
@@ -337,7 +334,7 @@ class ContentMigrator {
       description: projectData.description,
       content: projectData.content,
       role: projectData.role,
-      projectType: projectData.category,
+      projectType: projectCategory,
       featuredImage: images[0] ? {
         _type: 'image',
         asset: {
@@ -824,11 +821,11 @@ class ContentMigrator {
   }
   
   // File type detection
-  private isProjectFile(filePath: string, document: Document): boolean {
+  private isProjectFile(filePath: string, document?: Document): boolean {
     const filename = path.basename(filePath).toLowerCase()
     return filename.includes('project') || 
            filename.includes('research') ||
-           document.querySelector('.project, .research') !== null
+           (document && document.querySelector('.project, .research') !== null)
   }
   
   private isAboutFile(filePath: string, document: Document): boolean {
@@ -1267,7 +1264,7 @@ class ContentMigrator {
   private async migrateResearchProject(document: Document, filePath: string) {
     const title = this.extractProjectTitle(document, filePath)
     const description = this.extractProjectDescription(document)
-    const category = this.extractProjectCategory(document, filePath)
+    const projectCategory = this.extractProjectCategory(document, filePath)
     const researchers = this.extractResearchers(document)
     const pdfPoster = this.extractPDFPoster(document, filePath)
     const references = this.extractReferences(document)
@@ -1285,7 +1282,7 @@ class ContentMigrator {
       slug: { current: slug },
       description,
       content: portableText,
-      category,
+      category: projectCategory,
       researchers,
       references,
       featuredImage: pdfPoster ? await this.getAssetReference(path.relative(SOURCE_DIR, path.join(SOURCE_DIR, pdfPoster))) : undefined,

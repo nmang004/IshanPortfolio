@@ -1,0 +1,135 @@
+{
+  "error": "Mutation failed: Document \"main-profile\" references non-existent document \"dry-run-image-qc2el_CODeQIWIgmhr9ra\":\n- Document \"main-profile\" references non-existent document \"dry-run-image-qc2el_CODeQIWIgmhr9ra\"",
+  "stack": "Error: Mutation failed: Document \"main-profile\" references non-existent document \"dry-run-image-qc2el_CODeQIWIgmhr9ra\":\n- Document \"main-profile\" references non-existent document \"dry-run-image-qc2el_CODeQIWIgmhr9ra\"\n    at onResponse (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/@sanity/client/src/http/request.ts:13:13)\n    at applyMiddleware (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/get-it/src/util/middlewareReducer.ts:9:40)\n    at onResponse (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/get-it/src/createRequester.ts:62:22)\n    at <anonymous> (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/get-it/src/createRequester.ts:104:55)\n    at callback (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/get-it/src/request/node-request.ts:144:81)\n    at cb (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/get-it/src/request/node-request.ts:245:14)\n    at Transform.<anonymous> (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/get-it/src/request/node/simpleConcat.ts:8:13)\n    at Object.onceWrapper (node:events:632:28)\n    at Transform.emit (node:events:518:28)\n    at endReadableNT (/Users/nicholasmangubat/portfolio_ishan/portfolio-frontend/node_modules/readable-stream/lib/_stream_readable.js:1003:12)",
+  "state": {
+    "processed": [],
+    "failed": [],
+    "assets": {},
+    "documents": [
+      {
+        "_id": "main-profile",
+        "_type": "profile",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "main-profile",
+        "_type": "profile",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-ZDcefNFixjmhw6C4Z4tdP",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-_zHDXbI92vcsJc3VGeGvd",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-FABeJz8d-g457pJ_wry9Q",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-OGvcYPBzsQnXsH4gUPNNK",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-03Pz7WJ5fMCYMYLu8CZNv",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-a6jXV93SETFZkEtP-mkKO",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-omXYR1pKPwcigWztjWCa1",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-6Mfx8_36uWPvb4SNNeN7A",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-Q8a5H5kehfHFfuuY8Ogll",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "research-lbKvmgb-5xxE2eLfW_ei_",
+        "_type": "researchProject",
+        "title": "Ishan Perera"
+      },
+      {
+        "_id": "nrs-scale-demo",
+        "_type": "project",
+        "title": "NRS Scale Demo"
+      }
+    ],
+    "urlMappings": [
+      {
+        "oldUrl": "/airway_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-ZDcefNFixjmhw6C4Z4tdP"
+      },
+      {
+        "oldUrl": "/chiari_project1.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-_zHDXbI92vcsJc3VGeGvd"
+      },
+      {
+        "oldUrl": "/gbcurrent_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-FABeJz8d-g457pJ_wry9Q"
+      },
+      {
+        "oldUrl": "/gbnovel_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-OGvcYPBzsQnXsH4gUPNNK"
+      },
+      {
+        "oldUrl": "/ipf_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-03Pz7WJ5fMCYMYLu8CZNv"
+      },
+      {
+        "oldUrl": "/ndm_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-a6jXV93SETFZkEtP-mkKO"
+      },
+      {
+        "oldUrl": "/pca_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-omXYR1pKPwcigWztjWCa1"
+      },
+      {
+        "oldUrl": "/revive_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-6Mfx8_36uWPvb4SNNeN7A"
+      },
+      {
+        "oldUrl": "/toa_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-Q8a5H5kehfHFfuuY8Ogll"
+      },
+      {
+        "oldUrl": "/vr_project.html",
+        "newUrl": "/projects/ishan-perera",
+        "_id": "research-lbKvmgb-5xxE2eLfW_ei_"
+      },
+      {
+        "oldUrl": "/portfolio_scripts.html",
+        "newUrl": "/projects/nrs-scale-demo",
+        "_id": "nrs-scale-demo"
+      }
+    ],
+    "rollbackData": []
+  },
+  "timestamp": "2025-06-04T16:48:04.558Z"
+}

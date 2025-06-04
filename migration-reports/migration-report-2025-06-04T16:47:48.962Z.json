@@ -1,0 +1,930 @@
+{
+  "migration": {
+    "timestamp": "2025-06-04T16:47:48.962Z",
+    "mode": "dry-run",
+    "sourceDirectory": "../",
+    "sanityProject": "aonp1fhb",
+    "sanityDataset": "production"
+  },
+  "summary": {
+    "totalFilesProcessed": 0,
+    "totalDocumentsCreated": 13,
+    "totalAssetsUploaded": 182,
+    "totalFailures": 0,
+    "totalUrlMappings": 11,
+    "dataLoss": "none"
+  },
+  "documents": [
+    {
+      "_id": "main-profile",
+      "_type": "profile",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "main-profile",
+      "_type": "profile",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-ZDcefNFixjmhw6C4Z4tdP",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-_zHDXbI92vcsJc3VGeGvd",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-FABeJz8d-g457pJ_wry9Q",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-OGvcYPBzsQnXsH4gUPNNK",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-03Pz7WJ5fMCYMYLu8CZNv",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-a6jXV93SETFZkEtP-mkKO",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-omXYR1pKPwcigWztjWCa1",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-6Mfx8_36uWPvb4SNNeN7A",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-Q8a5H5kehfHFfuuY8Ogll",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "research-lbKvmgb-5xxE2eLfW_ei_",
+      "_type": "researchProject",
+      "title": "Ishan Perera"
+    },
+    {
+      "_id": "nrs-scale-demo",
+      "_type": "project",
+      "title": "NRS Scale Demo"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/img/apple-touch-icon.png",
+      "sanityId": "dry-run-image-fPO20q319ctvTQqNcxeA_"
+    },
+    {
+      "path": "assets/img/favicon.png",
+      "sanityId": "dry-run-image-93CZ9WWHXKUC2yufm4Ie_"
+    },
+    {
+      "path": "assets/img/hero-bg2.JPEG",
+      "sanityId": "dry-run-image-qc2el_CODeQIWIgmhr9ra"
+    },
+    {
+      "path": "assets/img/profile-img2.jpg",
+      "sanityId": "dry-run-image-BtmRUD080FJldGDvbhRqU"
+    },
+    {
+      "path": "assets/img/testimonials/testimonials-carrie.jpeg",
+      "sanityId": "dry-run-image-KAIoF5ffOAIawxFhmWr6O"
+    },
+    {
+      "path": "assets/img/testimonials/testimonials-fred.jpeg",
+      "sanityId": "dry-run-image-F7RPfFfoGpcc7qgkSZXkd"
+    },
+    {
+      "path": "assets/img/testimonials/testimonials-jeff.jpeg",
+      "sanityId": "dry-run-image-Ps_iN87Pinjhse0dbHrmH"
+    },
+    {
+      "path": "assets/img/testimonials/testimonials-katz.jpeg",
+      "sanityId": "dry-run-image-DF48k9OulMryC5hRav_Ge"
+    },
+    {
+      "path": "assets/img/testimonials/testimonials-nikos.jpeg",
+      "sanityId": "dry-run-image-WfAgHPiqSQjCt8mKTgvsX"
+    },
+    {
+      "path": "assets/img/testimonials/testimonials-singh.jpg",
+      "sanityId": "dry-run-image-5jx8W_Ehofxcc3p1P-IDZ"
+    },
+    {
+      "path": "assets/vendor/boxicons/fonts/boxicons.svg",
+      "sanityId": "dry-run-image-QGtgPxDSf_-juY-jwuFEr"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/@jest/reporters/assets/jest_logo.png",
+      "sanityId": "dry-run-image-8bbRHmAriLZdeqHmD34sw"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/@lhci/cli/node_modules/mute-stream/coverage/lcov-report/sort-arrow-sprite.png",
+      "sanityId": "dry-run-image-2TIfMy5UzCqg9vzwm20hg"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/@sanity/runtime-cli/dist/server/static/favicon-dark.svg",
+      "sanityId": "dry-run-image-kVic-YLEaHfArHNWsrGmO"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/@sanity/runtime-cli/dist/server/static/favicon.svg",
+      "sanityId": "dry-run-image-0q6nHBUndaNIMbsNC2ZWN"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/browserify-zlib/test/fixtures/person.jpg",
+      "sanityId": "dry-run-image-sTzSxcuwpvVuYHXj-FIJV"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/commitizen/logo/commitizen-logo-color.svg",
+      "sanityId": "dry-run-image-pab06XkejmF2OV0_Lb9I9"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/commitizen/logo/commitizen-logo-mono.svg",
+      "sanityId": "dry-run-image-eF-8QOR1suEf2DP_OE8ID"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/date-fns/docs/logo.svg",
+      "sanityId": "dry-run-image-FgDm2U9C6yuTh0UhovCF-"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/date-fns/docs/logotype.svg",
+      "sanityId": "dry-run-image-BC5q9zx-3EVooY3CWWtiH"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/getos/imgs/logo.png",
+      "sanityId": "dry-run-image-8fxus59u9-FcT73sh2kax"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/getos/imgs/logo.svg",
+      "sanityId": "dry-run-image-IP_dvZYW4G2AF2gbDzUsq"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/highlight.js/scss/brown-papersq.png",
+      "sanityId": "dry-run-image-_N1NRpae2V2y1SsuGkMjU"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/highlight.js/scss/pojoaque.jpg",
+      "sanityId": "dry-run-image-DxVpKL0958_0Llq0bLpqQ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/highlight.js/scss/school-book.png",
+      "sanityId": "dry-run-image-dI7MUKJ7eUwTsTHkKHmm-"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/highlight.js/styles/brown-papersq.png",
+      "sanityId": "dry-run-image-ezOtT9TO2GIu3JdY2ejI6"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/highlight.js/styles/pojoaque.jpg",
+      "sanityId": "dry-run-image-GGPqvcyVFS4uFbMTRO4zS"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/highlight.js/styles/school-book.png",
+      "sanityId": "dry-run-image-fYPHFpLbeTh1BDca5wYdJ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/html-webpack-plugin-5/node_modules/renderkid/docs/images/bullets-1.png",
+      "sanityId": "dry-run-image-glb7pQCnlPQXAtweURe4x"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/html-webpack-plugin-5/node_modules/renderkid/docs/images/display.png",
+      "sanityId": "dry-run-image-ktAyID6_1RIJCFpD7PLIM"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/html-webpack-plugin-5/node_modules/renderkid/docs/images/usage.png",
+      "sanityId": "dry-run-image-4cZKkz3XWTScySjuHyK99"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/istanbul-reports/lib/html/assets/favicon.png",
+      "sanityId": "dry-run-image-M-8E5q6EbsGPqotNn4o3q"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/istanbul-reports/lib/html/assets/sort-arrow-sprite.png",
+      "sanityId": "dry-run-image-DJG3xwvcV8k7n4Mv-Jz1y"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/istanbul-reports/lib/html-spa/assets/sort-arrow-sprite.png",
+      "sanityId": "dry-run-image-oPWq8Nymw6EdA98tGJeYp"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/playwright-core/lib/server/chromium/appIcon.png",
+      "sanityId": "dry-run-image-rjz9jTuWi1hHbDwEPL2ik"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
+      "sanityId": "dry-run-image-Cq45rOzGuLTpW6vYZhAoE"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
+      "sanityId": "dry-run-image-HWLJEKGkwKV5woRg94Zyh"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/polished/docs/assets/GitHub-Mark-Light-64px.png",
+      "sanityId": "dry-run-image-wObIfUrJmQeyV_3wPId5n"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/polished/docs/assets/logo.svg",
+      "sanityId": "dry-run-image-mqcn7ENOyblJ_GQDrrWb2"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/polished/docs/assets/meta.png",
+      "sanityId": "dry-run-image-xvohyxkkgcTcej-F4hIjF"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/polished/docs/favicon.png",
+      "sanityId": "dry-run-image-FIoq-3GB8Dztk2ipLhlrP"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/psl/browserstack-logo.svg",
+      "sanityId": "dry-run-image-b7t25o1bu0U6rNHLZDS_N"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/renderkid/docs/images/bullets-1.png",
+      "sanityId": "dry-run-image-YnxiM80pBupSqqKDgebYI"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/renderkid/docs/images/display.png",
+      "sanityId": "dry-run-image-1uJd3PiRLgjrfrLz3DysC"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/renderkid/docs/images/usage.png",
+      "sanityId": "dry-run-image-0ZWSu6YUvMnFrSw0-6Gge"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/rxjs-exhaustmap-with-trailing/marbles.svg",
+      "sanityId": "dry-run-image-BPKuxTUNeMYG1NCI9R3jd"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/src/_internal/cli/actions/media/test/fixtures/test-media-library-directory/images/2167dbd2135fce8298cc1448eeb512ed60b3224b-5472x3648.jpg",
+      "sanityId": "dry-run-image-ie2kBFMhLJL7dUufWFeC4"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/src/_internal/cli/actions/media/test/fixtures/test-media-library-directory/images/a2e6ee830963242992e07afd2773b02a65821939-166x112.jpg",
+      "sanityId": "dry-run-image-vXWF7tJTJjM67gHYUJLJU"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/static/favicons/apple-touch-icon.png",
+      "sanityId": "dry-run-image-A0BS291gSab3JXEFozNf7"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/static/favicons/favicon-192.png",
+      "sanityId": "dry-run-image-bRgz-gkdXunUg8kz8h4QV"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/static/favicons/favicon-512.png",
+      "sanityId": "dry-run-image-_jhXijqVitJ5gDn1AGaGE"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/static/favicons/favicon-96.png",
+      "sanityId": "dry-run-image-YWOb_4G41BHq7IzgNF7yL"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/sanity/static/favicons/favicon.svg",
+      "sanityId": "dry-run-image-TSaX-2VSF3lsAyypnVeY1"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/application_xp.png",
+      "sanityId": "dry-run-image-MgoH_xu32VoDxZa2VQkhj"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/application_xp_terminal.png",
+      "sanityId": "dry-run-image-80osECjQhCvTNceQLEvc4"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/box.png",
+      "sanityId": "dry-run-image-NRnpeZzDZx864XjGGZEex"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/cd.png",
+      "sanityId": "dry-run-image-ahLp7m_A_Qxdkh_K4F4ur"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/controller.png",
+      "sanityId": "dry-run-image-6y8zp6YFjiFSWhHEA4O1C"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/drive.png",
+      "sanityId": "dry-run-image-L7KB1Jtg9Z4MzbbY-Wpqq"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/film.png",
+      "sanityId": "dry-run-image-4JDVxeQeI_wMGcunv5PKJ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/folder.png",
+      "sanityId": "dry-run-image-S-_kPtq8E6bawCzRBHuxE"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/font.png",
+      "sanityId": "dry-run-image-4p6COKsr3mTUdIYCaqZ5T"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/image.png",
+      "sanityId": "dry-run-image-dGahOgQZrlPJ2nx2TnK3b"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/map.png",
+      "sanityId": "dry-run-image-nwHQ0pqqe97FS_b_SOkAP"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page.png",
+      "sanityId": "dry-run-image-2wY4Fsi-TQEWiA4IiKqyO"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_add.png",
+      "sanityId": "dry-run-image-Rf3fhr3e-cSOC6occQO43"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_attach.png",
+      "sanityId": "dry-run-image-uOg82_oUbly6aiM1ZtEGx"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_code.png",
+      "sanityId": "dry-run-image-hyfRYKHeP4GeTZ4_NFxPT"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_copy.png",
+      "sanityId": "dry-run-image-hgdgeeR9y_lX2Kech20iB"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_delete.png",
+      "sanityId": "dry-run-image-IQbvVBM9WTcZYqz8mB6bZ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_edit.png",
+      "sanityId": "dry-run-image-l_chSczChbzGrvR0jUESR"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_error.png",
+      "sanityId": "dry-run-image-Vox-rr10t3n1bp79_5hm_"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_excel.png",
+      "sanityId": "dry-run-image-kXs_Hok5C4nMrmBDE-Ndv"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_find.png",
+      "sanityId": "dry-run-image-cFq1vP9O-nKtxbUoYhLGy"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_gear.png",
+      "sanityId": "dry-run-image-HG3n4dCh465Dl7SnHOh-W"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_go.png",
+      "sanityId": "dry-run-image-cFXvfa7tbghW8Omcf56wW"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_green.png",
+      "sanityId": "dry-run-image-GMQYab588UKGuff9eR5Wx"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_key.png",
+      "sanityId": "dry-run-image-Z81fF_RjqeKTMIbY21zZf"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_lightning.png",
+      "sanityId": "dry-run-image-leZXvJSvIOJFY7rw_7qEE"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_link.png",
+      "sanityId": "dry-run-image-ESQSFdmPWCZrfZdfAHOGd"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_paintbrush.png",
+      "sanityId": "dry-run-image-Msdou7AalQFcnAG_NfvvX"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_paste.png",
+      "sanityId": "dry-run-image-QobJnF8sgChdnxgfdYDTT"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_red.png",
+      "sanityId": "dry-run-image-TKACchxLEytrn91mnAa6c"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_refresh.png",
+      "sanityId": "dry-run-image-zWuNo_CCZUXv6wJR3bF5q"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_save.png",
+      "sanityId": "dry-run-image-3sXCzhvZKGQG_O9XAv2cu"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white.png",
+      "sanityId": "dry-run-image-YpoWuY5KhVYrZjpUMKdi5"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_acrobat.png",
+      "sanityId": "dry-run-image-ap_LV9DJDs6BmS_kgSK4K"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_actionscript.png",
+      "sanityId": "dry-run-image-6YiJO64Lw0rEqXF17L1nB"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_add.png",
+      "sanityId": "dry-run-image-9blsxDumhglxcJVI3Chkm"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_c.png",
+      "sanityId": "dry-run-image-Y1qUB-75qpI0tBMimZKzu"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_camera.png",
+      "sanityId": "dry-run-image-255xQqvoDyXAFAlMOZrG8"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_cd.png",
+      "sanityId": "dry-run-image-oYHFzJZhzKE0PBNC40pnj"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_code.png",
+      "sanityId": "dry-run-image-ki5u-UKgZnj7wn1bUF5GV"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_code_red.png",
+      "sanityId": "dry-run-image-Lx6nWK3Xx9o7jMOi882ne"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_coldfusion.png",
+      "sanityId": "dry-run-image-K4GzhUcBCD11LqY37K9Xo"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_compressed.png",
+      "sanityId": "dry-run-image-h5UC0o7EShpSMWOy7-9_e"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_copy.png",
+      "sanityId": "dry-run-image-7AUcsX1gVlQ4M9Dnmr0En"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_cplusplus.png",
+      "sanityId": "dry-run-image-FoJxq0Yi7GwKEow64QfDb"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_csharp.png",
+      "sanityId": "dry-run-image-qdK-jV_Eo8QOxgZHrQSXQ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_cup.png",
+      "sanityId": "dry-run-image-SRy8mFoA3KaIdsQiqC6_I"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_database.png",
+      "sanityId": "dry-run-image-OlquqD6f8_NGBF-8OGoyQ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_delete.png",
+      "sanityId": "dry-run-image-EJu3I8b8Y-WDfUqDXXsjb"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_dvd.png",
+      "sanityId": "dry-run-image-o0bh33I2ASU2G66TIu4Tq"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_edit.png",
+      "sanityId": "dry-run-image-lQBEOh5-rdWV8X7jiEE8Q"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_error.png",
+      "sanityId": "dry-run-image-n-jPtg4N-OdRqpwWWUxxj"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_excel.png",
+      "sanityId": "dry-run-image-gXBUqAj6_E7vTvdtANQL5"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_find.png",
+      "sanityId": "dry-run-image-r5a1gnoU8b23a3CVBasU8"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_flash.png",
+      "sanityId": "dry-run-image-lBR4pvzc0ARMQbv-mzne1"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_freehand.png",
+      "sanityId": "dry-run-image-0oGKrMLlyD0Aa0FjvS8zR"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_gear.png",
+      "sanityId": "dry-run-image-AH4E-E2VBB9_xlVmv7GJR"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_get.png",
+      "sanityId": "dry-run-image-4ovFZaYRQ7BNGfJ0zMdQC"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_go.png",
+      "sanityId": "dry-run-image-MQR9MbLH-A2-LCxc4t0Qi"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_h.png",
+      "sanityId": "dry-run-image-gdFjrt-7G3IXHuU4afj3b"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_horizontal.png",
+      "sanityId": "dry-run-image-oNpihR7QoSUPVCBRgU9Fu"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_key.png",
+      "sanityId": "dry-run-image-KNxyybjVNrS39gHtIPLxj"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_lightning.png",
+      "sanityId": "dry-run-image-sTIUU3NdHnxtYXf1SPoC7"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_link.png",
+      "sanityId": "dry-run-image-HSQVTZw39m3RmTVWznNs2"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_magnify.png",
+      "sanityId": "dry-run-image-kLPOmEsSQT0fURK31zZ2s"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_medal.png",
+      "sanityId": "dry-run-image-gBIlqDRBB1ckkJbs6-Lpj"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_office.png",
+      "sanityId": "dry-run-image-kYwsFGy0lH2McFI-VNgxN"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_paint.png",
+      "sanityId": "dry-run-image-_hO53LrgxauqkF6R5KaKS"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_paintbrush.png",
+      "sanityId": "dry-run-image-lufE-nrCOmwVRTMApYbcT"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_paste.png",
+      "sanityId": "dry-run-image-cJGRD6T9XNAZqj5pnIabc"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_php.png",
+      "sanityId": "dry-run-image-yvE0y80f57G7J8l3_ewib"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_picture.png",
+      "sanityId": "dry-run-image-xpPpfP5lH-yH12oUqx8CM"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_powerpoint.png",
+      "sanityId": "dry-run-image-RGJLr3uG8JEUSKUBbuZGQ"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_put.png",
+      "sanityId": "dry-run-image-DzjhvXWw0JAVBq49QE0gp"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_ruby.png",
+      "sanityId": "dry-run-image-dN1ksWQnaHGX8X_jY6-ro"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_stack.png",
+      "sanityId": "dry-run-image-wUqsVNYgDtz_PIezIpkLC"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_star.png",
+      "sanityId": "dry-run-image-gjHejSvOeWQsT9bl6SQcN"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_swoosh.png",
+      "sanityId": "dry-run-image-WrEdWx1QuE5YLDElA_LfA"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_text.png",
+      "sanityId": "dry-run-image-uGzZp5z_X0btg7KZ9SPel"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_text_width.png",
+      "sanityId": "dry-run-image-EPkJXMWOnOiAqpa5mT_C6"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_tux.png",
+      "sanityId": "dry-run-image-vJwlnBarZ2LWcMn7-zOFm"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_vector.png",
+      "sanityId": "dry-run-image-lKRHW-qRcCXyEeHlvSdy9"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_visualstudio.png",
+      "sanityId": "dry-run-image-NulaSTQUPgbRPdNxPPdUb"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_width.png",
+      "sanityId": "dry-run-image-aNq6CSEeHzxQSbmH8gr4J"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_word.png",
+      "sanityId": "dry-run-image-lI7mvFIgYiL8XSpeoBnwH"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_world.png",
+      "sanityId": "dry-run-image-I6YYogbfP5yBaJ-PZraBo"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_wrench.png",
+      "sanityId": "dry-run-image-YONYrLibfFyJsGhjo-c4b"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_white_zip.png",
+      "sanityId": "dry-run-image-oX-XHEreoJYs98ux74749"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_word.png",
+      "sanityId": "dry-run-image-ixma25sQ849BAho8vZCN-"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/serve-index/public/icons/page_world.png",
+      "sanityId": "dry-run-image-CYD-1hHH61ah2Bdpk_7R-"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/speed-measure-webpack-plugin/logo.svg",
+      "sanityId": "dry-run-image-8Y3eWcVsL84ZP-IEis1If"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/speed-measure-webpack-plugin/preview.png",
+      "sanityId": "dry-run-image-T8vSvSrPzxsITJCN-YQwU"
+    },
+    {
+      "path": "portfolio-frontend/node_modules/undici/docs/assets/lifecycle-diagram.png",
+      "sanityId": "dry-run-image-qB8N1s2noypEmlRqPKgQO"
+    },
+    {
+      "path": "portfolio-frontend/public/android-chrome-192x192.png",
+      "sanityId": "dry-run-image-aNiPlUIJWjWV2qfTd8W_i"
+    },
+    {
+      "path": "portfolio-frontend/public/android-chrome-512x512.png",
+      "sanityId": "dry-run-image-3oZQbhzKADXidbxa1Qkf4"
+    },
+    {
+      "path": "portfolio-frontend/public/file.svg",
+      "sanityId": "dry-run-image-RAXgoQ67gW0ZH3ZCMuRWf"
+    },
+    {
+      "path": "portfolio-frontend/public/globe.svg",
+      "sanityId": "dry-run-image-Dd5rQGDHr27LOFChvF1mW"
+    },
+    {
+      "path": "portfolio-frontend/public/next.svg",
+      "sanityId": "dry-run-image-i-uLtznlsPSOHyrkUnpvz"
+    },
+    {
+      "path": "portfolio-frontend/public/vercel.svg",
+      "sanityId": "dry-run-image-l6TRenXlh-5G_jQWFy9D3"
+    },
+    {
+      "path": "portfolio-frontend/public/window.svg",
+      "sanityId": "dry-run-image-Rial_ZdghpwW3yskBxCbC"
+    },
+    {
+      "path": "sanity/dist/static/apple-touch-icon.png",
+      "sanityId": "dry-run-image-J_qlxT-VL9L0--YMhVJvV"
+    },
+    {
+      "path": "sanity/dist/static/favicon-192.png",
+      "sanityId": "dry-run-image-Q8pa0eXobFHEantEXHeJZ"
+    },
+    {
+      "path": "sanity/dist/static/favicon-512.png",
+      "sanityId": "dry-run-image-dRN8YcCbET_mWtbE3YEIG"
+    },
+    {
+      "path": "sanity/dist/static/favicon-96.png",
+      "sanityId": "dry-run-image-1tLMt9VFeYl1f1dcXgQSk"
+    },
+    {
+      "path": "sanity/dist/static/favicon.svg",
+      "sanityId": "dry-run-image-gk96331wCfm5m8AGAxriB"
+    },
+    {
+      "path": "sanity/node_modules/@sanity/runtime-cli/dist/server/static/favicon-dark.svg",
+      "sanityId": "dry-run-image-8MaYFkiYzRoYHKAoWH80g"
+    },
+    {
+      "path": "sanity/node_modules/@sanity/runtime-cli/dist/server/static/favicon.svg",
+      "sanityId": "dry-run-image-1joIqPaHdEiZiOjO90QgF"
+    },
+    {
+      "path": "sanity/node_modules/browserify-zlib/test/fixtures/person.jpg",
+      "sanityId": "dry-run-image-XOiRhchty6Uu-SIb0LEjk"
+    },
+    {
+      "path": "sanity/node_modules/date-fns/docs/logo.svg",
+      "sanityId": "dry-run-image-wljNCYe_79XD1CtzLyXrT"
+    },
+    {
+      "path": "sanity/node_modules/date-fns/docs/logotype.svg",
+      "sanityId": "dry-run-image-VMmTIfLSbHDlukRP3hy88"
+    },
+    {
+      "path": "sanity/node_modules/polished/docs/assets/GitHub-Mark-Light-64px.png",
+      "sanityId": "dry-run-image-rhN5mIuQIigfW7bWzE8Hq"
+    },
+    {
+      "path": "sanity/node_modules/polished/docs/assets/logo.svg",
+      "sanityId": "dry-run-image-WeKQbEPOdBcI7m4fAvDMe"
+    },
+    {
+      "path": "sanity/node_modules/polished/docs/assets/meta.png",
+      "sanityId": "dry-run-image-bd3RjDwDLrqr3WWP47Imo"
+    },
+    {
+      "path": "sanity/node_modules/polished/docs/favicon.png",
+      "sanityId": "dry-run-image-0mglUp7Jmj22t4yekj5K9"
+    },
+    {
+      "path": "sanity/node_modules/psl/browserstack-logo.svg",
+      "sanityId": "dry-run-image-J4_9zhhcM1PAWtKcRNmsh"
+    },
+    {
+      "path": "sanity/node_modules/rxjs-exhaustmap-with-trailing/marbles.svg",
+      "sanityId": "dry-run-image-XPdRKTrUpFOSuEvM_Vwcf"
+    },
+    {
+      "path": "sanity/node_modules/sanity/src/_internal/cli/actions/media/test/fixtures/test-media-library-directory/images/2167dbd2135fce8298cc1448eeb512ed60b3224b-5472x3648.jpg",
+      "sanityId": "dry-run-image-G6GB6w17qNWWokVsDCiOK"
+    },
+    {
+      "path": "sanity/node_modules/sanity/src/_internal/cli/actions/media/test/fixtures/test-media-library-directory/images/a2e6ee830963242992e07afd2773b02a65821939-166x112.jpg",
+      "sanityId": "dry-run-image-tp4Hnc2PAD5lCY_EFusi8"
+    },
+    {
+      "path": "sanity/node_modules/sanity/static/favicons/apple-touch-icon.png",
+      "sanityId": "dry-run-image-1zTruQnC1RYBIRHJz3_5A"
+    },
+    {
+      "path": "sanity/node_modules/sanity/static/favicons/favicon-192.png",
+      "sanityId": "dry-run-image-_oovewAYRnzqbPQun5NK9"
+    },
+    {
+      "path": "sanity/node_modules/sanity/static/favicons/favicon-512.png",
+      "sanityId": "dry-run-image-nMJn0VrigHOohvMts53zF"
+    },
+    {
+      "path": "sanity/node_modules/sanity/static/favicons/favicon-96.png",
+      "sanityId": "dry-run-image-EPbZYODtGjiITSixGfJfm"
+    },
+    {
+      "path": "sanity/node_modules/sanity/static/favicons/favicon.svg",
+      "sanityId": "dry-run-image-YdHdIqVLCUUwcAvWX8rwN"
+    },
+    {
+      "path": "sanity/node_modules/undici/docs/assets/lifecycle-diagram.png",
+      "sanityId": "dry-run-image-iWDitwKUkaR7SXOkoCfYg"
+    },
+    {
+      "path": "sanity-old/dist/static/apple-touch-icon.png",
+      "sanityId": "dry-run-image-DdEt0jhAiz6s7Toc7_5yW"
+    },
+    {
+      "path": "sanity-old/dist/static/favicon-192.png",
+      "sanityId": "dry-run-image-AxJe3yQlCwX2jvwr0qvwR"
+    },
+    {
+      "path": "sanity-old/dist/static/favicon-512.png",
+      "sanityId": "dry-run-image-m7NlU6IpOtkXqdmZ8qiIU"
+    },
+    {
+      "path": "sanity-old/dist/static/favicon-96.png",
+      "sanityId": "dry-run-image-pIw_x4lk-lpndYK0JCrYQ"
+    },
+    {
+      "path": "sanity-old/dist/static/favicon.svg",
+      "sanityId": "dry-run-image-U7oKo-vLFr7qreHqo2kMv"
+    }
+  ],
+  "urlMappings": [
+    {
+      "oldUrl": "/airway_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-ZDcefNFixjmhw6C4Z4tdP"
+    },
+    {
+      "oldUrl": "/chiari_project1.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-_zHDXbI92vcsJc3VGeGvd"
+    },
+    {
+      "oldUrl": "/gbcurrent_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-FABeJz8d-g457pJ_wry9Q"
+    },
+    {
+      "oldUrl": "/gbnovel_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-OGvcYPBzsQnXsH4gUPNNK"
+    },
+    {
+      "oldUrl": "/ipf_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-03Pz7WJ5fMCYMYLu8CZNv"
+    },
+    {
+      "oldUrl": "/ndm_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-a6jXV93SETFZkEtP-mkKO"
+    },
+    {
+      "oldUrl": "/pca_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-omXYR1pKPwcigWztjWCa1"
+    },
+    {
+      "oldUrl": "/revive_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-6Mfx8_36uWPvb4SNNeN7A"
+    },
+    {
+      "oldUrl": "/toa_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-Q8a5H5kehfHFfuuY8Ogll"
+    },
+    {
+      "oldUrl": "/vr_project.html",
+      "newUrl": "/projects/ishan-perera",
+      "_id": "research-lbKvmgb-5xxE2eLfW_ei_"
+    },
+    {
+      "oldUrl": "/portfolio_scripts.html",
+      "newUrl": "/projects/nrs-scale-demo",
+      "_id": "nrs-scale-demo"
+    }
+  ],
+  "failures": [],
+  "rollbackData": [],
+  "redirects": [
+    {
+      "source": "/airway_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/chiari_project1.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/gbcurrent_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/gbnovel_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/ipf_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/ndm_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/pca_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/revive_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/toa_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/vr_project.html",
+      "destination": "/projects/ishan-perera",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio_scripts.html",
+      "destination": "/projects/nrs-scale-demo",
+      "permanent": true
+    }
+  ]
+}

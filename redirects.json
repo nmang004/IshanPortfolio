@@ -1,0 +1,57 @@
+[
+  {
+    "source": "/airway_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/chiari_project1.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/gbcurrent_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/gbnovel_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/ipf_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/ndm_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/pca_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/revive_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/toa_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/vr_project.html",
+    "destination": "/projects/ishan-perera",
+    "permanent": true
+  },
+  {
+    "source": "/portfolio_scripts.html",
+    "destination": "/projects/nrs-scale-demo",
+    "permanent": true
+  }
+]
