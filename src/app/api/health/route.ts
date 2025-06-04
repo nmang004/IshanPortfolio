@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 
 // Health check endpoint for monitoring
-export async function GET(request: Request) {
-  const headersList = headers()
+export async function GET(_request: Request) {
+  const headersList = await headers()
   const authHeader = headersList.get('authorization')
   
   // Optional: Add authentication for monitoring services
