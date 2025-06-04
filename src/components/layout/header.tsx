@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from './theme-toggle'
+import { GlobalSearch } from '@/components/features/global-search'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -64,7 +65,10 @@ export function Header() {
               <span className="font-bold">Ishan Perera</span>
             </Link>
           </div>
-          <nav className="flex items-center">
+          <nav className="flex items-center space-x-2">
+            <div className="hidden md:block">
+              <GlobalSearch />
+            </div>
             <ThemeToggle />
           </nav>
         </div>

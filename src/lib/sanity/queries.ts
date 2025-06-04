@@ -1,4 +1,5 @@
 import { groq } from 'next-sanity'
+import { client } from './client'
 
 export const profileQuery = groq`
   *[_type == "profile"][0] {
@@ -71,6 +72,16 @@ export const researchProjectBySlugQuery = groq`
     seoMeta
   }
 `
+
+// Helper function to get single project
+export async function getProject(slug: string) {
+  return client.fetch(researchProjectBySlugQuery, { slug })
+}
+
+// Helper function to get all projects  
+export async function getProjects() {
+  return client.fetch(researchProjectsQuery)
+}
 
 export const testimonialsQuery = groq`
   *[_type == "testimonial" && isActive == true] | order(displayOrder asc) {
