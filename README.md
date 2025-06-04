@@ -1,6 +1,6 @@
-# Portfolio Frontend - Next.js 15 with TypeScript
+# IshanPortfolio - Next.js 15 Enterprise Frontend
 
-A production-ready Next.js application built with modern best practices, performance optimizations, and developer experience enhancements.
+A production-ready Next.js application built with modern best practices, performance optimizations, and developer experience enhancements for Ishan Perera's professional portfolio.
 
 ## ✅ Features Implemented
 
