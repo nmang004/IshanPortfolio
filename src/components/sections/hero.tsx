@@ -1,14 +1,35 @@
 import { Button } from '@/components/ui/button'
+import { client } from '@/lib/sanity/client'
+import { profileQuery } from '@/lib/sanity/queries'
 
-export function Hero() {
+interface ProfileData {
+  fullName?: string
+  currentTitle?: string
+  heroRoles?: string[]
+  biography?: string
+}
+
+async function getProfile(): Promise<ProfileData | null> {
+  try {
+    const profile = await client.fetch(profileQuery)
+    return profile
+  } catch (error) {
+    console.error('Error fetching profile:', error)
+    return null
+  }
+}
+
+export async function Hero() {
+  const profile = await getProfile()
+  
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
       <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
         <h1 className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          Ishan Perera
+          {profile?.fullName || 'Ishan Perera'}
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          Medical Student • Researcher • Business Owner • Developer
+          {profile?.currentTitle || 'Medical Student • Researcher • Business Owner • Developer'}
         </p>
         <div className="space-x-4">
           <Button size="lg">
