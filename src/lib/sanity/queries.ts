@@ -75,12 +75,22 @@ export const researchProjectBySlugQuery = groq`
 
 // Helper function to get single project
 export async function getProject(slug: string) {
-  return client.fetch(researchProjectBySlugQuery, { slug })
+  try {
+    return await client.fetch(researchProjectBySlugQuery, { slug })
+  } catch (error) {
+    console.error('Error fetching project:', error)
+    return null
+  }
 }
 
 // Helper function to get all projects  
 export async function getProjects() {
-  return client.fetch(researchProjectsQuery)
+  try {
+    return await client.fetch(researchProjectsQuery)
+  } catch (error) {
+    console.error('Error fetching projects:', error)
+    return []
+  }
 }
 
 export const testimonialsQuery = groq`
@@ -166,3 +176,23 @@ export const siteConfigQuery = groq`
     mobileBreakpoint
   }
 `
+
+// Helper function to get profile data
+export async function getProfile() {
+  try {
+    return await client.fetch(profileQuery)
+  } catch (error) {
+    console.error('Error fetching profile:', error)
+    return null
+  }
+}
+
+// Helper function to get testimonials
+export async function getTestimonials() {
+  try {
+    return await client.fetch(testimonialsQuery)
+  } catch (error) {
+    console.error('Error fetching testimonials:', error)
+    return []
+  }
+}

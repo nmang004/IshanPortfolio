@@ -1,22 +1,11 @@
 import { Button } from '@/components/ui/button'
-import { client } from '@/lib/sanity/client'
-import { profileQuery } from '@/lib/sanity/queries'
+import { getProfile } from '@/lib/sanity/queries'
 
 interface ProfileData {
   fullName?: string
   currentTitle?: string
   heroRoles?: string[]
   biography?: string
-}
-
-async function getProfile(): Promise<ProfileData | null> {
-  try {
-    const profile = await client.fetch(profileQuery)
-    return profile
-  } catch (error) {
-    console.error('Error fetching profile:', error)
-    return null
-  }
 }
 
 export async function Hero() {

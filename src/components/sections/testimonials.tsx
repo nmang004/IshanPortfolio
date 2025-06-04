@@ -1,5 +1,4 @@
-import { client } from '@/lib/sanity/client'
-import { testimonialsQuery } from '@/lib/sanity/queries'
+import { getTestimonials } from '@/lib/sanity/queries'
 
 interface Testimonial {
   _id: string
@@ -7,16 +6,6 @@ interface Testimonial {
   authorTitle?: string
   organization?: string
   testimonialText: string
-}
-
-async function getTestimonials(): Promise<Testimonial[]> {
-  try {
-    const testimonials = await client.fetch(testimonialsQuery)
-    return testimonials || []
-  } catch (error) {
-    console.error('Error fetching testimonials:', error)
-    return []
-  }
 }
 
 export async function Testimonials() {
