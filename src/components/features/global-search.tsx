@@ -194,7 +194,7 @@ export function GlobalSearch() {
     localStorage.removeItem('search-history')
   }
   
-  const categories = Array.from(new Set(mockResults.map(r => r.category).filter(Boolean)))
+  const categories = Array.from(new Set(mockResults.map(r => r.category).filter(Boolean))) as string[]
   
   const getResultIcon = (type: SearchResult['type']) => {
     switch (type) {

@@ -222,7 +222,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               )}
 
               {/* References Section */}
-              {project.references && project.references.length > 0 && (
+              {project.references && Array.isArray(project.references) && project.references.length > 0 && (
                 <section id="references" className="scroll-mt-32">
                   <h2 className="text-3xl font-bold mb-6">References</h2>
                   <div className="space-y-4">
