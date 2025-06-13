@@ -75,6 +75,28 @@ export const researchProjectBySlugQuery = groq`
 
 // Helper function to get single project
 export async function getProject(slug: string) {
+  // Skip Sanity call if not properly configured
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'fallback-disabled') {
+    return {
+      _id: 'fallback',
+      title: 'Sample Research Project',
+      slug: { current: slug },
+      category: 'Original Research',
+      abstract: 'This is a sample project displayed when the content management system is not configured.',
+      publishedDate: '2024-01-01',
+      researchers: [{ name: 'Ishan Perera', role: 'Lead Researcher', affiliation: 'Medical School' }],
+      references: [],
+      awards: ['Outstanding Research Award 2024'],
+      keyFindings: ['Significant findings in medical research', 'Innovative methodology developed'],
+      tags: ['Medical Research', 'Innovation'],
+      methodology: [],
+      journal: 'Journal of Medical Research',
+      doi: '10.1000/sample.doi',
+      status: 'published',
+      irbNumber: 'IRB-2024-001'
+    }
+  }
+
   try {
     const result = await client.fetch(researchProjectBySlugQuery, { slug })
     return result
@@ -99,6 +121,26 @@ export async function getProject(slug: string) {
 
 // Helper function to get all projects  
 export async function getProjects() {
+  // Skip Sanity call if not properly configured
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'fallback-disabled') {
+    return [
+      {
+        _id: 'fallback-1',
+        title: 'Sample Research Project',
+        slug: { current: 'sample-project' },
+        category: 'Original Research',
+        abstract: 'This is a sample project displayed when the content management system is not configured.',
+        publishedDate: '2024-01-01',
+        researchers: [{ name: 'Ishan Perera', role: 'Lead Researcher' }],
+        awards: ['Outstanding Research Award 2024'],
+        tags: ['Medical Research', 'Innovation'],
+        keyFindings: ['Significant findings in medical research'],
+        displayOrder: 1,
+        isFeatured: true
+      }
+    ]
+  }
+
   try {
     const result = await client.fetch(researchProjectsQuery)
     return result || []
@@ -210,6 +252,23 @@ export const siteConfigQuery = groq`
 
 // Helper function to get profile data
 export async function getProfile() {
+  // Skip Sanity call if not properly configured
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'fallback-disabled') {
+    return {
+      _id: 'fallback-profile',
+      fullName: 'Ishan Perera',
+      currentTitle: 'Medical Student • Researcher • Business Owner • Developer',
+      heroRoles: ['Medical Student', 'Researcher', 'Business Owner', 'Developer'],
+      biography: 'Medical student with interests in research, business, and technology. This is sample content displayed when the content management system is not configured.',
+      socialLinks: [
+        { platform: 'linkedin', url: 'https://linkedin.com/in/ishanperera' },
+        { platform: 'github', url: 'https://github.com/ishanperera' }
+      ],
+      businessLinks: [],
+      featuredProjects: []
+    }
+  }
+
   try {
     const result = await client.fetch(profileQuery)
     return result
@@ -231,6 +290,32 @@ export async function getProfile() {
 
 // Helper function to get testimonials
 export async function getTestimonials() {
+  // Skip Sanity call if not properly configured
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'fallback-disabled') {
+    return [
+      {
+        _id: 'fallback-testimonial-1',
+        authorName: 'Dr. Sarah Johnson',
+        authorTitle: 'Research Supervisor',
+        organization: 'Medical Research Institute',
+        testimonialText: 'Ishan is an exceptional researcher with a keen eye for detail and innovative approaches to complex medical problems.',
+        relationship: 'supervisor',
+        displayOrder: 1,
+        isFeatured: true
+      },
+      {
+        _id: 'fallback-testimonial-2',
+        authorName: 'Prof. Michael Chen',
+        authorTitle: 'Department Head',
+        organization: 'University Medical Center',
+        testimonialText: 'Outstanding academic performance and dedication to advancing medical knowledge through rigorous research.',
+        relationship: 'professor',
+        displayOrder: 2,
+        isFeatured: true
+      }
+    ]
+  }
+
   try {
     const result = await client.fetch(testimonialsQuery)
     return result || []
