@@ -1,7 +1,7 @@
 import { Hero } from '@/components/sections/hero'
 import { ProjectsGrid } from '@/components/sections/projects-grid'
 import { Testimonials } from '@/components/sections/testimonials'
-import { ContactForm } from '@/components/sections/contact-form'
+import { ContactFormWrapper } from '@/components/sections/contact-form-wrapper'
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
       <Hero />
       <ProjectsGrid />
       <Testimonials />
-      <ContactForm />
+      <ContactFormWrapper />
     </>
   )
 }

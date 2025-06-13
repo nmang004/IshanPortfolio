@@ -125,6 +125,28 @@ const nextConfig: NextConfig = {
   // External packages for server components
   serverExternalPackages: ['@sanity/client'],
   
+  // Webpack configuration to fix client reference manifest issue
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Ensure client reference manifests are properly generated
+      config.optimization = {
+        ...config.optimization,
+        runtimeChunk: 'single',
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: {
+              minChunks: 2,
+              priority: -20,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      }
+    }
+    return config
+  },
+  
   images: {
     remotePatterns: [
       {
@@ -141,6 +163,7 @@ const nextConfig: NextConfig = {
   experimental: {
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
     esmExternals: true,
+    optimizePackageImports: ['lucide-react', '@radix-ui/*'],
   },
   
   async headers() {
