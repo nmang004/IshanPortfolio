@@ -1,0 +1,1523 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "fullName",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "currentTitle",
+        "type": "string"
+      },
+      {
+        "description": "List of roles to display in the hero section",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "heroRoles",
+        "type": "array"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "profileImage",
+        "type": "image"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "heroBackground",
+        "type": "image",
+        "title": "Hero Background Image"
+      },
+      {
+        "rows": 5,
+        "name": "biography",
+        "type": "text"
+      },
+      {
+        "options": {
+          "accept": ".pdf"
+        },
+        "name": "currentCV",
+        "type": "file"
+      },
+      {
+        "fields": [
+          {
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "type": "string"
+          }
+        ],
+        "name": "contactInfo",
+        "type": "object",
+        "title": "Contact Information"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "LinkedIn",
+                      "value": "linkedin"
+                    },
+                    {
+                      "title": "Twitter",
+                      "value": "twitter"
+                    },
+                    {
+                      "title": "GitHub",
+                      "value": "github"
+                    },
+                    {
+                      "title": "Instagram",
+                      "value": "instagram"
+                    },
+                    {
+                      "title": "Facebook",
+                      "value": "facebook"
+                    }
+                  ]
+                },
+                "name": "platform",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "URL"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "socialLinks",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "URL"
+              },
+              {
+                "name": "description",
+                "type": "text"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "businessLinks",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 3
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "to": [
+              {
+                "type": "researchProject"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to research project"
+          }
+        ],
+        "name": "featuredProjects",
+        "type": "array"
+      },
+      {
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "title": "Meta Title"
+          },
+          {
+            "rows": 3,
+            "name": "description",
+            "type": "text",
+            "title": "Meta Description"
+          },
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "keywords",
+            "type": "array"
+          }
+        ],
+        "name": "seoMeta",
+        "type": "object",
+        "title": "SEO Metadata"
+      }
+    ],
+    "name": "profile",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Original Research",
+              "value": "original-research"
+            },
+            {
+              "title": "Review Article",
+              "value": "review-article"
+            },
+            {
+              "title": "Case Study",
+              "value": "case-study"
+            },
+            {
+              "title": "Meta-Analysis",
+              "value": "meta-analysis"
+            },
+            {
+              "title": "Clinical Trial",
+              "value": "clinical-trial"
+            },
+            {
+              "title": "Systematic Review",
+              "value": "systematic-review"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "original-research",
+                  "review-article",
+                  "case-study",
+                  "meta-analysis",
+                  "clinical-trial",
+                  "systematic-review"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "description": "Category for breadcrumb navigation",
+        "name": "breadcrumbCategory",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "abstract",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/"
+                                  ],
+                                  "allowRelative": false,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "name": "href",
+                      "type": "url",
+                      "title": "URL"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object",
+                  "title": "URL"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Emphasis"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bullet"
+              },
+              {
+                "value": "number",
+                "title": "Number"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h2",
+                "title": "H2"
+              },
+              {
+                "value": "h3",
+                "title": "H3"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alternative text"
+              },
+              {
+                "name": "caption",
+                "type": "string"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "methodology",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "type": "text"
+          }
+        ],
+        "name": "keyFindings",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "role",
+                "type": "string"
+              },
+              {
+                "name": "affiliation",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "researchers",
+        "type": "array"
+      },
+      {
+        "name": "publishedDate",
+        "type": "date"
+      },
+      {
+        "name": "journal",
+        "type": "string"
+      },
+      {
+        "description": "Digital Object Identifier",
+        "name": "doi",
+        "type": "string",
+        "title": "DOI"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Published",
+              "value": "published"
+            },
+            {
+              "title": "Under Review",
+              "value": "under-review"
+            },
+            {
+              "title": "In Progress",
+              "value": "in-progress"
+            },
+            {
+              "title": "Submitted",
+              "value": "submitted"
+            }
+          ]
+        },
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "description": "Institutional Review Board number",
+        "name": "irbNumber",
+        "type": "string",
+        "title": "IRB Number"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "researchPoster",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "description",
+                "type": "text"
+              }
+            ],
+            "type": "file"
+          }
+        ],
+        "name": "supplementaryFiles",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "number",
+                "type": "number",
+                "title": "Reference Number"
+              },
+              {
+                "name": "citation",
+                "type": "text"
+              },
+              {
+                "name": "doi",
+                "type": "string",
+                "title": "DOI"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "references",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "awards",
+        "type": "array",
+        "title": "Awards & Recognition"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "tags",
+        "type": "array"
+      },
+      {
+        "description": "Order in which this project should appear",
+        "name": "displayOrder",
+        "type": "number"
+      },
+      {
+        "description": "Display this project prominently",
+        "name": "isFeatured",
+        "type": "boolean",
+        "title": "Featured Project"
+      },
+      {
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "title": "Meta Title"
+          },
+          {
+            "rows": 3,
+            "name": "description",
+            "type": "text",
+            "title": "Meta Description"
+          },
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "keywords",
+            "type": "array"
+          }
+        ],
+        "name": "seoMeta",
+        "type": "object",
+        "title": "SEO Metadata"
+      }
+    ],
+    "name": "researchProject",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "skillName",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Programming Languages",
+              "value": "programming"
+            },
+            {
+              "title": "Frameworks & Libraries",
+              "value": "frameworks"
+            },
+            {
+              "title": "Tools & Software",
+              "value": "tools"
+            },
+            {
+              "title": "Medical Skills",
+              "value": "medical"
+            },
+            {
+              "title": "Research Methods",
+              "value": "research"
+            },
+            {
+              "title": "Languages",
+              "value": "languages"
+            },
+            {
+              "title": "Soft Skills",
+              "value": "soft-skills"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "programming",
+                  "frameworks",
+                  "tools",
+                  "medical",
+                  "research",
+                  "languages",
+                  "soft-skills"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Beginner",
+              "value": "beginner"
+            },
+            {
+              "title": "Intermediate",
+              "value": "intermediate"
+            },
+            {
+              "title": "Advanced",
+              "value": "advanced"
+            },
+            {
+              "title": "Expert",
+              "value": "expert"
+            }
+          ]
+        },
+        "name": "proficiencyLevel",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Technical",
+              "value": "technical"
+            },
+            {
+              "title": "Certification",
+              "value": "certification"
+            },
+            {
+              "title": "Language",
+              "value": "language"
+            },
+            {
+              "title": "Soft Skill",
+              "value": "soft"
+            }
+          ]
+        },
+        "name": "skillType",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "yearsExperience",
+        "type": "number",
+        "title": "Years of Experience"
+      },
+      {
+        "description": "Date when certification was obtained (if applicable)",
+        "name": "certificationDate",
+        "type": "date"
+      },
+      {
+        "description": "Expiration date for certification (if applicable)",
+        "name": "expirationDate",
+        "type": "date"
+      },
+      {
+        "description": "Organization that issued the certification",
+        "name": "issuingOrganization",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "description": "Brief description of the skill or how it was acquired",
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "description": "Order in which this skill should appear within its category",
+        "name": "displayOrder",
+        "type": "number"
+      },
+      {
+        "description": "Display this skill prominently",
+        "name": "isFeatured",
+        "type": "boolean",
+        "title": "Featured Skill"
+      },
+      {
+        "initialValue": true,
+        "description": "Display this skill on the website",
+        "name": "isActive",
+        "type": "boolean",
+        "title": "Active"
+      }
+    ],
+    "name": "skill",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Position Title"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "organization",
+        "type": "string"
+      },
+      {
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "startDate",
+        "type": "date"
+      },
+      {
+        "description": "Leave empty if current position",
+        "name": "endDate",
+        "type": "date"
+      },
+      {
+        "initialValue": false,
+        "description": "Check if this is a current position",
+        "name": "current",
+        "type": "boolean",
+        "title": "Current Position"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Education",
+              "value": "education"
+            },
+            {
+              "title": "Work Experience",
+              "value": "work"
+            },
+            {
+              "title": "Research",
+              "value": "research"
+            },
+            {
+              "title": "Volunteer",
+              "value": "volunteer"
+            },
+            {
+              "title": "Internship",
+              "value": "internship"
+            },
+            {
+              "title": "Leadership",
+              "value": "leadership"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "education",
+                  "work",
+                  "research",
+                  "volunteer",
+                  "internship",
+                  "leadership"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "experienceType",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "description": "Brief description of the role and responsibilities",
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "description": "List of key achievements or accomplishments",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "achievements",
+        "type": "array",
+        "title": "Key Achievements"
+      },
+      {
+        "description": "For educational experiences",
+        "hidden": "conditional",
+        "name": "gpa",
+        "type": "string",
+        "title": "GPA"
+      },
+      {
+        "description": "For educational experiences",
+        "hidden": "conditional",
+        "name": "classRank",
+        "type": "string"
+      },
+      {
+        "description": "Academic honors, awards, or distinctions",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "honors",
+        "type": "array",
+        "title": "Honors & Awards"
+      },
+      {
+        "description": "Skills gained or developed in this role",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "skills",
+        "type": "array",
+        "title": "Skills Developed"
+      },
+      {
+        "description": "Order within experience type (lower numbers appear first)",
+        "name": "displayOrder",
+        "type": "number"
+      },
+      {
+        "initialValue": false,
+        "description": "Display this experience prominently",
+        "name": "isFeatured",
+        "type": "boolean",
+        "title": "Featured Experience"
+      },
+      {
+        "initialValue": true,
+        "description": "Display this experience on the website",
+        "name": "isActive",
+        "type": "boolean",
+        "title": "Active"
+      }
+    ],
+    "name": "experience",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "authorName",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "authorTitle",
+        "type": "string",
+        "title": "Author Title/Position"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "authorImage",
+        "type": "image",
+        "title": "Author Photo"
+      },
+      {
+        "description": "Company, institution, or organization",
+        "name": "organization",
+        "type": "string"
+      },
+      {
+        "rows": 5,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "testimonialText",
+        "type": "text"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Supervisor",
+              "value": "supervisor"
+            },
+            {
+              "title": "Colleague",
+              "value": "colleague"
+            },
+            {
+              "title": "Mentor",
+              "value": "mentor"
+            },
+            {
+              "title": "Client",
+              "value": "client"
+            },
+            {
+              "title": "Professor",
+              "value": "professor"
+            },
+            {
+              "title": "Peer",
+              "value": "peer"
+            },
+            {
+              "title": "Research Collaborator",
+              "value": "research-collaborator"
+            },
+            {
+              "title": "Professional Reference",
+              "value": "professional"
+            }
+          ]
+        },
+        "description": "Relationship to the testimonial author",
+        "name": "relationship",
+        "type": "string"
+      },
+      {
+        "description": "Order in which testimonials should appear",
+        "name": "displayOrder",
+        "type": "number"
+      },
+      {
+        "initialValue": false,
+        "description": "Display this testimonial prominently",
+        "name": "isFeatured",
+        "type": "boolean",
+        "title": "Featured Testimonial"
+      },
+      {
+        "initialValue": true,
+        "description": "Display this testimonial on the website",
+        "name": "isActive",
+        "type": "boolean",
+        "title": "Active"
+      }
+    ],
+    "name": "testimonial",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "value",
+        "type": "number"
+      },
+      {
+        "description": "e.g., \"+\", \"%\", \"years\", etc.",
+        "name": "suffix",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "description": "Lucide icon name (e.g., \"award\", \"users\", \"calendar\")",
+        "name": "icon",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Primary",
+              "value": "primary"
+            },
+            {
+              "title": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "title": "Accent",
+              "value": "accent"
+            },
+            {
+              "title": "Success",
+              "value": "success"
+            },
+            {
+              "title": "Warning",
+              "value": "warning"
+            },
+            {
+              "title": "Info",
+              "value": "info"
+            }
+          ]
+        },
+        "initialValue": "primary",
+        "name": "color",
+        "type": "string",
+        "title": "Color Theme"
+      },
+      {
+        "initialValue": 2,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0.5
+              },
+              {
+                "flag": "max",
+                "constraint": 10
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Duration for the counting animation",
+        "name": "animationDuration",
+        "type": "number",
+        "title": "Animation Duration (seconds)"
+      },
+      {
+        "description": "Order in which statistics should appear",
+        "name": "displayOrder",
+        "type": "number"
+      },
+      {
+        "initialValue": false,
+        "description": "Display this statistic prominently",
+        "name": "isFeatured",
+        "type": "boolean",
+        "title": "Featured Statistic"
+      },
+      {
+        "initialValue": true,
+        "description": "Display this statistic on the website",
+        "name": "isActive",
+        "type": "boolean",
+        "title": "Active"
+      }
+    ],
+    "name": "statistic",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": 1,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0.1
+              },
+              {
+                "flag": "max",
+                "constraint": 10
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Speed of hero section animations (in seconds)",
+        "name": "heroAnimationSpeed",
+        "type": "number"
+      },
+      {
+        "initialValue": 1,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0.1
+              },
+              {
+                "flag": "max",
+                "constraint": 5
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Speed of hero background animations",
+        "name": "heroBackSpeed",
+        "type": "number",
+        "title": "Hero Background Speed"
+      },
+      {
+        "initialValue": 0.5,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              },
+              {
+                "flag": "max",
+                "constraint": 5
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Delay before hero background animation starts (in seconds)",
+        "name": "heroBackDelay",
+        "type": "number",
+        "title": "Hero Background Delay"
+      },
+      {
+        "initialValue": 2,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0.5
+              },
+              {
+                "flag": "max",
+                "constraint": 10
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Duration for statistic counter animations (in seconds)",
+        "name": "counterAnimationDuration",
+        "type": "number"
+      },
+      {
+        "initialValue": true,
+        "description": "Enable automatic testimonial rotation",
+        "name": "testimonialAutoplay",
+        "type": "boolean"
+      },
+      {
+        "initialValue": 5,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 2
+              },
+              {
+                "flag": "max",
+                "constraint": 30
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Delay between testimonial rotations (in seconds)",
+        "hidden": "conditional",
+        "name": "testimonialDelay",
+        "type": "number"
+      },
+      {
+        "initialValue": true,
+        "description": "Enable smooth scrolling for navigation links",
+        "name": "smoothScrolling",
+        "type": "boolean"
+      },
+      {
+        "initialValue": 80,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              },
+              {
+                "flag": "max",
+                "constraint": 200
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Offset for scroll-to-section navigation (in pixels)",
+        "name": "scrollOffset",
+        "type": "number"
+      },
+      {
+        "initialValue": 600,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 200
+              },
+              {
+                "flag": "max",
+                "constraint": 3000
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Duration for Animate On Scroll effects (in milliseconds)",
+        "name": "aosDuration",
+        "type": "number",
+        "title": "AOS Animation Duration"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Ease",
+              "value": "ease"
+            },
+            {
+              "title": "Ease In",
+              "value": "ease-in"
+            },
+            {
+              "title": "Ease Out",
+              "value": "ease-out"
+            },
+            {
+              "title": "Ease In Out",
+              "value": "ease-in-out"
+            },
+            {
+              "title": "Linear",
+              "value": "linear"
+            }
+          ]
+        },
+        "initialValue": "ease-out",
+        "description": "Easing function for AOS animations",
+        "name": "aosEasing",
+        "type": "string",
+        "title": "AOS Easing"
+      },
+      {
+        "initialValue": 768,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 320
+              },
+              {
+                "flag": "max",
+                "constraint": 1024
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Breakpoint for mobile responsive design (in pixels)",
+        "name": "mobileBreakpoint",
+        "type": "number"
+      }
+    ],
+    "name": "siteConfig",
+    "type": "document",
+    "title": "Site Configuration"
+  }
+]

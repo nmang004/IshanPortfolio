@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'ishan-portfolio',
   title: 'Ishan Portfolio CMS',
   
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'aonp1fh',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'ne7sn5va',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   
   basePath: '/studio',
