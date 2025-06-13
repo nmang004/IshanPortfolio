@@ -125,9 +125,6 @@ const nextConfig: NextConfig = {
   // External packages for server components
   serverExternalPackages: ['@sanity/client'],
   
-  // Fix for client reference manifest issue in Next.js 15
-  bundlePagesRouterDependencies: true,
-  
   images: {
     remotePatterns: [
       {
@@ -143,6 +140,7 @@ const nextConfig: NextConfig = {
   
   experimental: {
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
+    esmExternals: true,
   },
   
   async headers() {
