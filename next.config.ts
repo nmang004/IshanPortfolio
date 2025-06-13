@@ -126,9 +126,9 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ['@sanity/client'],
   
   // Webpack configuration to fix client reference manifest issue
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Ensure client reference manifests are properly generated
+  webpack: (config, { isServer, nextRuntime }) => {
+    // Handle client reference manifest generation
+    if (!isServer && nextRuntime !== 'edge') {
       config.optimization = {
         ...config.optimization,
         runtimeChunk: 'single',
@@ -140,10 +140,31 @@ const nextConfig: NextConfig = {
               priority: -20,
               reuseExistingChunk: true,
             },
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendor',
+              priority: 10,
+            },
           },
         },
       }
+      
+      // Ensure proper module resolution
+      config.resolve = {
+        ...config.resolve,
+        fallback: {
+          ...config.resolve?.fallback,
+          fs: false,
+          path: false,
+        },
+      }
     }
+    
+    // Fix for route groups and client components
+    if (isServer) {
+      config.externals = [...(config.externals || []), '@sanity/client']
+    }
+    
     return config
   },
   
@@ -164,6 +185,12 @@ const nextConfig: NextConfig = {
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
     esmExternals: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/*'],
+  },
+  
+  // Ensure proper build output
+  distDir: '.next',
+  generateBuildId: async () => {
+    return process.env.VERCEL_GIT_COMMIT_SHA || 'development'
   },
   
   async headers() {
