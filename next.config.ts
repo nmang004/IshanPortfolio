@@ -125,6 +125,9 @@ const nextConfig: NextConfig = {
   // External packages for server components
   serverExternalPackages: ['@sanity/client'],
   
+  // Fix for client reference manifest issue in Next.js 15
+  bundlePagesRouterDependencies: true,
+  
   images: {
     remotePatterns: [
       {
