@@ -2,9 +2,9 @@ import { createClient } from '@sanity/client'
 
 // Public client for reading published content (no authentication needed)
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION!,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'aonp1fh',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01',
   useCdn: process.env.NODE_ENV === 'production',
   perspective: 'published',
   stega: false,
@@ -12,9 +12,9 @@ export const client = createClient({
 
 // Authenticated client for preview mode (requires token)
 export const previewClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION!,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'aonp1fh',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01',
   useCdn: false,
   token: process.env.SANITY_API_TOKEN,
   perspective: 'previewDrafts',
