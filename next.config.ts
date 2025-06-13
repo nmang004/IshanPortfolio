@@ -122,6 +122,9 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   
+  // External packages for server components
+  serverExternalPackages: ['@sanity/client'],
+  
   images: {
     remotePatterns: [
       {
