@@ -1,3 +1,5 @@
+'use client'
+
 import { Hero } from '@/components/sections/hero'
 import { ProjectsGrid } from '@/components/sections/projects-grid'
 import { Testimonials } from '@/components/sections/testimonials'
