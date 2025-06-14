@@ -25,14 +25,24 @@ export const getCSPHeader = (nonce?: string) => {
     'default-src': ["'self'"],
     'script-src': [
       "'self'",
-      nonce ? `'nonce-${nonce}'` : "'unsafe-inline'",
-      "'unsafe-eval'", // Required for Next.js in dev mode
+      "'unsafe-inline'", // Required for Next.js hydration and inline scripts
+      "'unsafe-eval'", // Required for Next.js
       'https://cdn.sanity.io',
       'https://vercel.live',
       'https://*.vercel-analytics.com',
       'https://*.vercel-insights.com',
       'https://www.googletagmanager.com',
       'https://www.google-analytics.com',
+      // Add specific script hashes if needed in the future
+      // "'sha256-LcsuUMiDkprrt6ZKeiLP4iYNhWo8NqaSbAgtoZxVK3s='",
+      // "'sha256-g5uPbGofGS5uUe2HpfOL2KXp7m0CU/UAgBStPMBsL3Y='",
+      // "'sha256-OBTN3RiyCV4Bq7dFqZ5a2pAXjnCcCYeTJMO2I/LYKeo='",
+      // "'sha256-GAdVtjfcIVMnFjG8/OQinSvwpZe2Osct5/oBOz3+wc0='",
+      // "'sha256-CWGXLehFl0LXkqN1TWi/JXu1VYjqKAZzOh6Dy3aIuak='",
+      // "'sha256-YKARSnw/GLszzHkoy71tSQsP3JbodICCQ7nkj3I4Co4='",
+      // "'sha256-RetorcMUSM/H5GaEDTttjSE6Zi3uLyKBil8MEfrAQgM='",
+      // "'sha256-uJxkGQKvxYA4+inLLOAdln+S1lgrQc2Vlq+KSyadQQc='",
+      // "'sha256-t1jM3T/ibM8ptOREaFmFjg4JkyU257xVux2J2cVefFg='",
     ],
     'style-src': [
       "'self'",
@@ -53,6 +63,10 @@ export const getCSPHeader = (nonce?: string) => {
       'https://www.google-analytics.com',
       'https://vitals.vercel-insights.com',
       'wss://cdn.sanity.io', // WebSocket for Sanity real-time updates
+      'ws://localhost:*', // Local development WebSocket
+      'wss://localhost:*', // Local development WebSocket (secure)
+      'ws://*.vercel.app', // Vercel preview WebSocket
+      'wss://*.vercel.app', // Vercel preview WebSocket (secure)
     ],
     'frame-src': [
       "'self'",
