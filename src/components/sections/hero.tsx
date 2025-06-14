@@ -14,85 +14,101 @@ export async function Hero() {
   const profile = await getProfile()
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-400/30 to-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-to-br from-emerald-400/25 to-cyan-500/25 rounded-full blur-2xl animate-pulse animation-delay-2000"></div>
-      </div>
-      
-      <div className="container relative z-10 px-4">
-        <div className="mx-auto max-w-5xl text-center">
-          {/* Welcome Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 mb-8 rounded-full bg-white/80 dark:bg-slate-800/80 border border-slate-200/50 dark:border-slate-700/50 shadow-2xl backdrop-blur-xl">
-            <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/50"></div>
-            <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">Welcome to my portfolio</span>
-          </div>
-          
-          {/* Main Heading */}
-          <div className="space-y-6 mb-8">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 dark:text-white">
-              {profile?.fullName || 'Ishan Perera'}
-            </h1>
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-600 dark:text-slate-300">
-              {profile?.currentTitle || 'Medical Student • Researcher • Business Owner • Developer'}
-            </p>
-          </div>
-          
-          {/* Description */}
-          <p className="max-w-3xl mx-auto text-xl lg:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed mb-10 font-medium">
-            Passionate about advancing healthcare through innovation, research, and technology. 
-            Currently pursuing my Doctor of Osteopathic Medicine while building impactful solutions.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Button size="lg" asChild className="group h-14 px-8 text-lg font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 rounded-2xl">
-              <Link href="/projects">
-                View My Research
-                <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-2" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild className="group h-14 px-8 text-lg font-semibold border-2 border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-700 backdrop-blur-sm transition-all duration-500 hover:scale-110 hover:shadow-2xl rounded-2xl">
-              <Link href="/contact">
-                Get In Touch
-                <Download className="ml-3 h-6 w-6 transition-transform group-hover:rotate-12" />
-              </Link>
-            </Button>
-          </div>
-          
-          {/* Stats Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="group relative p-8 rounded-3xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
-              <div className="relative">
-                <div className="text-4xl font-black text-blue-600 dark:text-blue-400 mb-2">10+</div>
-                <div className="text-lg font-semibold text-slate-700 dark:text-slate-300">Research Projects</div>
+    <section className="relative bg-white dark:bg-gray-900 py-20 lg:py-32">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div className="space-y-8">
+              {/* Professional Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                Medical Student & Researcher
+              </div>
+              
+              {/* Main Heading */}
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+                  {profile?.fullName || 'Ishan Perera'}
+                </h1>
+                <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-medium">
+                  {profile?.currentTitle || 'Medical Student • Researcher • Business Owner • Developer'}
+                </p>
+              </div>
+              
+              {/* Description */}
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                Passionate about advancing healthcare through innovation, research, and technology. 
+                Currently pursuing my Doctor of Osteopathic Medicine while building impactful solutions 
+                that bridge the gap between medicine and technology.
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Link href="/projects">
+                    View My Research
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild className="border-2 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300">
+                  <Link href="/contact">
+                    Get In Touch
+                    <Download className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
               </div>
             </div>
-            <div className="group relative p-8 rounded-3xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl"></div>
-              <div className="relative">
-                <div className="text-4xl font-black text-purple-600 dark:text-purple-400 mb-2">1800+</div>
-                <div className="text-lg font-semibold text-slate-700 dark:text-slate-300">Volunteer Hours</div>
+            
+            {/* Right Column - Stats/Highlights */}
+            <div className="space-y-6">
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Professional Highlights</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                      <span className="text-blue-600 dark:text-blue-400 font-bold text-lg">10+</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 dark:text-white">Research Projects</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Published & ongoing studies</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                      <span className="text-purple-600 dark:text-purple-400 font-bold text-lg">1.8K+</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 dark:text-white">Volunteer Hours</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Community health initiatives</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
+                      <span className="text-emerald-600 dark:text-emerald-400 font-bold text-lg">3K+</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 dark:text-white">Patient Contact Hours</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Clinical experience</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="group relative p-8 rounded-3xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 rounded-3xl"></div>
-              <div className="relative">
-                <div className="text-4xl font-black text-emerald-600 dark:text-emerald-400 mb-2">3000+</div>
-                <div className="text-lg font-semibold text-slate-700 dark:text-slate-300">Patient Contact Hours</div>
+              
+              {/* Additional Info Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-800">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Currently</span>
+                </div>
+                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                  Pursuing Doctor of Osteopathic Medicine while developing innovative healthcare solutions and conducting research in medical technology.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Floating particles */}
-      <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-      <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-purple-400 rounded-full animate-ping animation-delay-1000"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-ping animation-delay-2000"></div>
     </section>
   )
 }
