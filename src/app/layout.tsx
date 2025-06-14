@@ -7,7 +7,6 @@ import { Toaster } from 'sonner'
 import { CommandPalette } from '@/components/features/command-palette'
 import { PWAInstall } from '@/components/features/pwa-install'
 import './globals.css'
-// Cache bust v2.0
 
 const inter = Inter({
   subsets: ['latin'],
