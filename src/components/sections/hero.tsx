@@ -32,10 +32,8 @@ export async function Hero() {
           
           {/* Main Heading */}
           <div className="space-y-6 mb-8">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight">
-              <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-indigo-900 dark:from-white dark:via-blue-200 dark:to-indigo-200 bg-clip-text text-transparent">
-                {profile?.fullName || 'Ishan Perera'}
-              </span>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 dark:text-white">
+              {profile?.fullName || 'Ishan Perera'}
             </h1>
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-600 dark:text-slate-300">
               {profile?.currentTitle || 'Medical Student • Researcher • Business Owner • Developer'}
