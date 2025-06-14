@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import { getTestimonials } from '@/lib/sanity/queries'
 import { Quote, Star, Users } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 interface Testimonial {
   _id: string
@@ -14,96 +15,103 @@ export async function Testimonials() {
   const testimonials = await getTestimonials()
 
   return (
-    <section className="relative py-8 md:py-12 lg:py-24 bg-muted/30">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      
-      <div className="container space-y-6 relative">
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <div>
-            <Badge variant="outline" className="mb-4">
-              <Users className="w-3 h-3 mr-1" />
-              Professional References
-            </Badge>
+    <section className="py-16 lg:py-24">
+      <div className="container">
+        {/* Section Header */}
+        <div className="mx-auto max-w-3xl text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-medium mb-4">
+            <Users className="w-4 h-4" />
+            Professional References
           </div>
-          
-          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl text-foreground">
-            What People Say
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-gray-900 to-purple-900 dark:from-white dark:to-purple-100 bg-clip-text text-transparent">
+              What People Say
+            </span>
           </h2>
-          
-          <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Testimonials from colleagues, mentors, and collaborators about my work and character.
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            Testimonials from colleagues, mentors, and collaborators who have witnessed my commitment to excellence in medicine and research.
           </p>
         </div>
         
-        <div className="mx-auto max-w-[64rem]">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.length > 0 ? (
-              testimonials.map((testimonial, index) => (
-                <div
-                  key={testimonial._id}
-                  className="group"
-                >
-                  <div className="relative rounded-lg border bg-background p-6 h-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary/50 group-hover:bg-gradient-to-br group-hover:from-blue-50/50 group-hover:to-purple-50/50 dark:group-hover:from-blue-900/10 dark:group-hover:to-purple-900/10">
-                    {/* Quote icon */}
-                    <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                      <Quote className="h-8 w-8 text-primary" />
-                    </div>
-                    
-                    {/* Star rating visual */}
-                    <div className="flex gap-1 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    
-                    {/* Testimonial text */}
-                    <blockquote className="text-sm leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300">
-                      &ldquo;{testimonial.testimonialText}&rdquo;
-                    </blockquote>
-                    
-                    {/* Author info */}
-                    <div className="border-t pt-4">
-                      <cite className="not-italic">
-                        <div className="font-semibold text-sm group-hover:text-primary transition-colors duration-300">
+        {/* Testimonials Grid */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {testimonials.length > 0 ? (
+            testimonials.map((testimonial, index) => (
+              <div
+                key={testimonial._id}
+                className="group relative"
+              >
+                <div className="h-full bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm hover:shadow-xl transition-all duration-300">
+                  {/* Quote icon */}
+                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <Quote className="h-4 w-4 text-white" />
+                  </div>
+                  
+                  {/* Rating stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  
+                  {/* Testimonial text */}
+                  <blockquote className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-sm">
+                    &ldquo;{testimonial.testimonialText}&rdquo;
+                  </blockquote>
+                  
+                  {/* Author info */}
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                        <span className="text-white font-semibold text-sm">
+                          {testimonial.authorName.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900 dark:text-white text-sm">
                           {testimonial.authorName}
                         </div>
                         {testimonial.authorTitle && (
-                          <div className="text-xs text-muted-foreground mt-1">
+                          <div className="text-xs text-gray-600 dark:text-gray-400">
                             {testimonial.authorTitle}
                           </div>
                         )}
                         {testimonial.organization && (
-                          <div className="text-xs text-muted-foreground">
+                          <div className="text-xs text-gray-500 dark:text-gray-500">
                             {testimonial.organization}
                           </div>
                         )}
-                      </cite>
+                      </div>
                     </div>
-                    
-                    {/* Hover accent */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-lg" />
                   </div>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center text-muted-foreground">
-                <div className="p-8 rounded-lg border-2 border-dashed bg-background">
-                  <Quote className="h-12 w-12 mx-auto mb-4 opacity-30" />
-                  <p className="text-lg font-medium">No testimonials available</p>
-                  <p className="text-sm mt-2">Professional references will be displayed here.</p>
-                </div>
               </div>
-            )}
-          </div>
+            ))
+          ) : (
+            <div className="col-span-full">
+              <div className="max-w-md mx-auto text-center p-8 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Quote className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No testimonials available</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                  Professional references and testimonials will be displayed here once available.
+                </p>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/contact">Connect with me</Link>
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
         
-        {/* Bottom accent */}
-        <div className="flex justify-center mt-12">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary" />
-            <span>Trusted by colleagues and mentors</span>
-            <div className="w-8 h-px bg-gradient-to-l from-transparent to-primary" />
+        {/* Bottom Section */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center gap-4 px-6 py-3 bg-gray-50 dark:bg-gray-800 rounded-full border border-gray-200 dark:border-gray-700">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Trusted by colleagues and mentors in medicine and research
+            </span>
           </div>
         </div>
       </div>
