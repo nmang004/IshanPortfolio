@@ -19,50 +19,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "apple touch icon"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Projects",
-      "short_name": "Projects",
-      "description": "View research projects",
-      "url": "/projects",
-      "icons": [
-        {
-          "src": "/icons/briefcase-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "About",
-      "short_name": "About",
-      "description": "Learn about Ishan",
-      "url": "/about",
-      "icons": [
-        {
-          "src": "/icons/user-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Get in touch",
-      "url": "/contact",
-      "icons": [
-        {
-          "src": "/icons/mail-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
     }
   ],
   "categories": ["education", "medical", "portfolio", "research"],
