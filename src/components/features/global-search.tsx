@@ -170,15 +170,21 @@ export function GlobalSearch() {
   }, [debouncedQuery, selectedCategory])
   
   const handleResultClick = (result: SearchResult) => {
-    setOpen(false)
-    setQuery('')
-    setSelectedCategory(null)
-    router.push(result.url)
-    analytics.event('search_result_click', {
-      result_id: result.id,
-      result_type: result.type,
-      query: query
-    })
+    try {
+      setOpen(false)
+      setQuery('')
+      setSelectedCategory(null)
+      router.push(result.url)
+      analytics.event('search_result_click', {
+        result_id: result.id,
+        result_type: result.type,
+        query: query
+      })
+    } catch (error) {
+      console.error('Navigation error:', error)
+      // Fallback to window.location if router.push fails
+      window.location.href = result.url
+    }
   }
   
   const handleHistoryClick = (historyQuery: string) => {
@@ -193,6 +199,19 @@ export function GlobalSearch() {
     setSearchHistory([])
     localStorage.removeItem('search-history')
   }
+
+  // Handle keyboard shortcuts
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === '/') {
+        event.preventDefault()
+        setOpen(true)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [])
   
   const categories = Array.from(new Set(mockResults.map(r => r.category).filter(Boolean))) as string[]
   
