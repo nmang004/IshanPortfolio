@@ -20,18 +20,18 @@ export async function Testimonials() {
       
       <div className="container space-y-6 relative">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <div className="animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
+          <div>
             <Badge variant="outline" className="mb-4">
               <Users className="w-3 h-3 mr-1" />
               Professional References
             </Badge>
           </div>
           
-          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl animate-fade-in opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards] bg-gradient-to-r from-gray-900 to-purple-900 dark:from-white dark:to-purple-100 bg-clip-text text-transparent">
+          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl bg-gradient-to-r from-gray-900 to-purple-900 dark:from-white dark:to-purple-100 bg-clip-text text-transparent">
             What People Say
           </h2>
           
-          <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 animate-fade-in opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
+          <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
             Testimonials from colleagues, mentors, and collaborators about my work and character.
           </p>
         </div>
@@ -42,8 +42,7 @@ export async function Testimonials() {
               testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial._id}
-                  className={`group animate-fade-in opacity-0 [animation-fill-mode:forwards]`}
-                  style={{ animationDelay: `${0.4 + index * 0.15}s` }}
+                  className="group"
                 >
                   <div className="relative rounded-lg border bg-background p-6 h-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary/50 group-hover:bg-gradient-to-br group-hover:from-blue-50/50 group-hover:to-purple-50/50 dark:group-hover:from-blue-900/10 dark:group-hover:to-purple-900/10">
                     {/* Quote icon */}
@@ -88,7 +87,7 @@ export async function Testimonials() {
                 </div>
               ))
             ) : (
-              <div className="col-span-full text-center text-muted-foreground animate-fade-in opacity-0 [animation-delay:0.4s] [animation-fill-mode:forwards]">
+              <div className="col-span-full text-center text-muted-foreground">
                 <div className="p-8 rounded-lg border-2 border-dashed bg-background">
                   <Quote className="h-12 w-12 mx-auto mb-4 opacity-30" />
                   <p className="text-lg font-medium">No testimonials available</p>
@@ -100,7 +99,7 @@ export async function Testimonials() {
         </div>
         
         {/* Bottom accent */}
-        <div className="flex justify-center mt-12 animate-fade-in opacity-0 [animation-delay:1s] [animation-fill-mode:forwards]">
+        <div className="flex justify-center mt-12">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary" />
             <span>Trusted by colleagues and mentors</span>

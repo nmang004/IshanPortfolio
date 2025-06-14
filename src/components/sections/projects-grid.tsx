@@ -30,16 +30,16 @@ export async function ProjectsGrid() {
   return (
     <section className="container space-y-6 py-8 md:py-12 lg:py-24">
       <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-        <div className="animate-fade-in opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
+        <div>
           <Badge variant="outline" className="mb-4">
             <Tag className="w-3 h-3 mr-1" />
             Research Portfolio
           </Badge>
         </div>
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl animate-fade-in opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards] bg-gradient-to-r from-gray-900 to-blue-900 dark:from-white dark:to-blue-100 bg-clip-text text-transparent">
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl bg-gradient-to-r from-gray-900 to-blue-900 dark:from-white dark:to-blue-100 bg-clip-text text-transparent">
           Research Projects
         </h2>
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 animate-fade-in opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
+        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
           Explore my research work in medicine, technology, and innovation.
         </p>
       </div>
@@ -50,8 +50,7 @@ export async function ProjectsGrid() {
             <Link
               key={project._id}
               href={`/projects/${project.slug.current}`}
-              className={`group animate-fade-in opacity-0 [animation-fill-mode:forwards]`}
-              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+              className="group"
             >
               <div className="relative overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary/50 group-hover:bg-muted/50">
                 {/* Hover gradient overlay */}
@@ -108,7 +107,7 @@ export async function ProjectsGrid() {
             </Link>
           ))
         ) : (
-          <div className="col-span-full text-center text-muted-foreground animate-fade-in opacity-0 [animation-delay:0.4s] [animation-fill-mode:forwards]">
+          <div className="col-span-full text-center text-muted-foreground">
             <div className="p-8 rounded-lg border-2 border-dashed">
               <p>No projects found</p>
               <p className="text-sm mt-2">Check back soon for new research updates!</p>
