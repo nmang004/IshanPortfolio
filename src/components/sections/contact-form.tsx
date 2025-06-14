@@ -188,25 +188,25 @@ export function ContactForm() {
             className="space-y-4"
           >
             <div>
-              <h3 className="text-lg font-semibold mb-4">Personal Information</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Personal Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="firstName">First Name *</Label>
+                  <Label htmlFor="firstName" className="text-gray-900 dark:text-white font-medium">First Name *</Label>
                   <Input
                     id="firstName"
                     {...register('firstName')}
-                    className={errors.firstName ? 'border-red-500' : ''}
+                    className={`bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 ${errors.firstName ? 'border-red-500' : ''}`}
                   />
                   {errors.firstName && (
                     <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>
                   )}
                 </div>
                 <div>
-                  <Label htmlFor="lastName">Last Name *</Label>
+                  <Label htmlFor="lastName" className="text-gray-900 dark:text-white font-medium">Last Name *</Label>
                   <Input
                     id="lastName"
                     {...register('lastName')}
-                    className={errors.lastName ? 'border-red-500' : ''}
+                    className={`bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 ${errors.lastName ? 'border-red-500' : ''}`}
                   />
                   {errors.lastName && (
                     <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>
@@ -216,12 +216,12 @@ export function ContactForm() {
             </div>
 
             <div>
-              <Label htmlFor="email">Email Address *</Label>
+              <Label htmlFor="email" className="text-gray-900 dark:text-white font-medium">Email Address *</Label>
               <Input
                 id="email"
                 type="email"
                 {...register('email')}
-                className={errors.email ? 'border-red-500' : ''}
+                className={`bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 ${errors.email ? 'border-red-500' : ''}`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -229,11 +229,12 @@ export function ContactForm() {
             </div>
 
             <div>
-              <Label htmlFor="phone">Phone Number (Optional)</Label>
+              <Label htmlFor="phone" className="text-gray-900 dark:text-white font-medium">Phone Number (Optional)</Label>
               <Input
                 id="phone"
                 type="tel"
                 {...register('phone')}
+                className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600"
               />
             </div>
           </motion.div>
@@ -249,11 +250,11 @@ export function ContactForm() {
             className="space-y-4"
           >
             <div>
-              <h3 className="text-lg font-semibold mb-4">Inquiry Details</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Inquiry Details</h3>
               
               <div className="space-y-4">
                 <div>
-                  <Label>Type of Inquiry *</Label>
+                  <Label className="text-gray-900 dark:text-white font-medium">Type of Inquiry *</Label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
                     {inquiryTypes.map((type) => (
                       <label
@@ -282,11 +283,11 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <Label htmlFor="subject">Subject *</Label>
+                  <Label htmlFor="subject" className="text-gray-900 dark:text-white font-medium">Subject *</Label>
                   <Input
                     id="subject"
                     {...register('subject')}
-                    className={errors.subject ? 'border-red-500' : ''}
+                    className={`bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 ${errors.subject ? 'border-red-500' : ''}`}
                     placeholder="Brief description of your inquiry"
                   />
                   {errors.subject && (
@@ -295,7 +296,7 @@ export function ContactForm() {
                 </div>
 
                 <div>
-                  <Label>Priority Level</Label>
+                  <Label className="text-gray-900 dark:text-white font-medium">Priority Level</Label>
                   <div className="flex gap-2 mt-2">
                     {urgencyLevels.map((level) => (
                       <label
@@ -333,16 +334,16 @@ export function ContactForm() {
             className="space-y-4"
           >
             <div>
-              <h3 className="text-lg font-semibold mb-4">Your Message</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Your Message</h3>
               
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message" className="text-gray-900 dark:text-white font-medium">Message *</Label>
                   <Textarea
                     id="message"
                     rows={6}
                     {...register('message')}
-                    className={errors.message ? 'border-red-500' : ''}
+                    className={`bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 ${errors.message ? 'border-red-500' : ''}`}
                     placeholder="Please provide details about your inquiry..."
                   />
                   {errors.message && (
@@ -352,7 +353,7 @@ export function ContactForm() {
 
                 {/* File Upload */}
                 <div>
-                  <Label>Attachments (Optional)</Label>
+                  <Label className="text-gray-900 dark:text-white font-medium">Attachments (Optional)</Label>
                   <div className="mt-2">
                     <input
                       type="file"
@@ -408,11 +409,12 @@ export function ContactForm() {
 
                   {watchedValues.meetingRequest && (
                     <div>
-                      <Label htmlFor="preferredTimes">Preferred Times</Label>
+                      <Label htmlFor="preferredTimes" className="text-gray-900 dark:text-white font-medium">Preferred Times</Label>
                       <Textarea
                         id="preferredTimes"
                         rows={3}
                         {...register('preferredTimes')}
+                        className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600"
                         placeholder="Please provide 2-3 preferred time slots (include your time zone)"
                       />
                     </div>

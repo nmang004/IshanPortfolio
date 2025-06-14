@@ -133,7 +133,7 @@ export function AnimatedTimeline() {
 
               {/* Content Card */}
               <div className={`w-full md:w-5/12 ml-16 md:ml-0 ${isEven ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                <Card className="hover:shadow-lg transition-shadow">
+                <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-3">
                       <Badge variant={item.current ? 'default' : 'secondary'}>
