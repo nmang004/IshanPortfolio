@@ -14,13 +14,46 @@ interface Project {
   tags?: string[]
 }
 
+const fallbackProjects = [
+  {
+    _id: 'lumbar-laminectomy',
+    title: 'Lumbar Laminectomy Research',
+    slug: { current: 'lumbar-laminectomy-research' },
+    category: 'Clinical Research',
+    abstract: 'Published research in Cureus journal focusing on pseudomeningocele and duro-cutaneous fistula complications in lumbar laminectomy procedures.',
+    publishedDate: '2023-12-01',
+    tags: ['Neurosurgery', 'Clinical Study', 'Cureus Journal']
+  },
+  {
+    _id: 'ai-heart-failure',
+    title: 'AI Heart Failure Classification Model',
+    slug: { current: 'ai-heart-failure-classification' },
+    category: 'Medical AI',
+    abstract: 'Comparative analysis of AI classification models for heart failure diagnosis using NYHA keywords and comprehensive patient history data.',
+    publishedDate: '2023-11-15',
+    tags: ['Machine Learning', 'Cardiology', 'Healthcare AI']
+  },
+  {
+    _id: 'chiari-malformations',
+    title: 'Chiari I Malformations Geometric Morphometric Analysis',
+    slug: { current: 'chiari-malformations-analysis' },
+    category: 'Neurological Research',
+    abstract: 'Advanced geometric morphometric analysis of Chiari I malformations. Accepted for AANS 2023 Annual Scientific Meeting and awarded 1st Prize at VCOM-VA 2023 Research Day.',
+    publishedDate: '2023-10-20',
+    tags: ['Neurology', 'AANS Conference', 'Award Winner']
+  }
+]
+
 async function getProjects(): Promise<Project[]> {
   try {
     const projects = await client.fetch(researchProjectsQuery)
-    return projects || []
+    if (projects && projects.length > 0) {
+      return projects
+    }
+    return fallbackProjects
   } catch (error) {
     console.error('Error fetching projects:', error)
-    return []
+    return fallbackProjects
   }
 }
 

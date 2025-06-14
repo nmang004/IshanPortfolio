@@ -11,8 +11,59 @@ interface Testimonial {
   testimonialText: string
 }
 
+const fallbackTestimonials = [
+  {
+    _id: 'dr-fred-rawlins',
+    authorName: 'Dr. Fred Rawlins, II',
+    authorTitle: 'Dean for Simulation and Technology',
+    organization: 'VCOM',
+    testimonialText: 'I tribute this section to those who allowed me the chance to grow and impress. I continue to look to each person on this list as a personal mentor. Contact details available on request.'
+  },
+  {
+    _id: 'carrie-buck',
+    authorName: 'Carrie Buck, RN',
+    authorTitle: 'Clinical Manager',
+    organization: 'Sentara Healthcare',
+    testimonialText: 'Outstanding dedication to patient care and medical excellence. Shows exceptional promise in clinical research and innovative healthcare solutions.'
+  },
+  {
+    _id: 'ran-vijai-singh',
+    authorName: 'Ran Vijai Singh, M.D.',
+    authorTitle: 'Neurosurgeon',
+    organization: 'Norfolk Neurosurgical Associates',
+    testimonialText: 'Demonstrates remarkable analytical skills and commitment to advancing neurosurgical research. A valuable contributor to our research initiatives.'
+  },
+  {
+    _id: 'jennifer-katz-keenan',
+    authorName: 'Jennifer Katz-Keenan, Ph.D',
+    authorTitle: 'Cadaver Professor',
+    organization: 'VCOM',
+    testimonialText: 'Exceptional student with deep understanding of anatomical sciences and strong research capabilities. Consistently delivers high-quality work.'
+  },
+  {
+    _id: 'jeff-rhoades',
+    authorName: 'Jeff Rhoades',
+    authorTitle: 'Owner/Operator',
+    organization: 'YourPie',
+    testimonialText: 'Reliable, professional, and demonstrates excellent leadership qualities. Shows great potential in both medical and business endeavors.'
+  }
+]
+
+async function getTestimonialsWithFallback(): Promise<Testimonial[]> {
+  try {
+    const testimonials = await getTestimonials()
+    if (testimonials && testimonials.length > 0) {
+      return testimonials
+    }
+    return fallbackTestimonials
+  } catch (error) {
+    console.error('Error fetching testimonials:', error)
+    return fallbackTestimonials
+  }
+}
+
 export async function Testimonials() {
-  const testimonials = await getTestimonials()
+  const testimonials = await getTestimonialsWithFallback()
 
   return (
     <section className="py-20 lg:py-32 bg-white dark:bg-gray-800">
