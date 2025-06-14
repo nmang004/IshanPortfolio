@@ -15,6 +15,11 @@ export async function Hero() {
   
   return (
     <section className="relative bg-white dark:bg-gray-900 py-20 lg:py-32">
+      {/* DEBUG: Test if Tailwind is working */}
+      <div className="absolute top-4 left-4 bg-red-500 text-white p-2 text-xs rounded z-50">
+        Tailwind Test - If you see this red box, Tailwind is working
+      </div>
+      
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
