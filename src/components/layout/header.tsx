@@ -24,8 +24,9 @@ export function Header() {
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
       console.log('Mobile menu state changed:', mobileMenuOpen)
+      console.log('Current pathname:', pathname)
     }
-  }, [mobileMenuOpen])
+  }, [mobileMenuOpen, pathname])
 
   // Prevent hydration issues
   useEffect(() => {
@@ -72,6 +73,7 @@ export function Header() {
             href="/" 
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200"
             onClick={() => {
+              console.log('Logo clicked, navigating to home')
               // Ensure mobile menu closes when navigating home
               setMobileMenuOpen(false)
             }}
@@ -103,6 +105,9 @@ export function Header() {
                     ? 'text-blue-600 dark:text-blue-400' 
                     : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
+                onClick={() => {
+                  console.log(`Desktop nav clicked: ${item.name} -> ${item.href}`)
+                }}
               >
                 {item.name}
               </Link>
@@ -187,6 +192,7 @@ export function Header() {
                           : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                       }`}
                       onClick={() => {
+                        console.log(`Mobile nav clicked: ${item.name} -> ${item.href}`)
                         setMobileMenuOpen(false)
                       }}
                     >
