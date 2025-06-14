@@ -45,7 +45,11 @@ export function SkillsMatrix() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [animatedValues, setAnimatedValues] = useState<{[key: string]: number}>({})
   const containerRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(containerRef, { once: true, amount: 0.3 })
+  const isInView = useInView(containerRef, { 
+    once: true, 
+    amount: 0.1, // Reduced threshold for better mobile detection
+    margin: "0px 0px -100px 0px" // Trigger earlier
+  })
 
   useEffect(() => {
     if (isInView) {
@@ -59,6 +63,26 @@ export function SkillsMatrix() {
       })
     }
   }, [isInView])
+
+  // Fallback: Trigger animation after component mounts if not triggered by intersection observer
+  useEffect(() => {
+    const fallbackTimer = setTimeout(() => {
+      const hasAnyValues = Object.keys(animatedValues).length > 0
+      if (!hasAnyValues) {
+        // Force trigger animation if intersection observer failed
+        skillsData.forEach((skill, index) => {
+          setTimeout(() => {
+            setAnimatedValues(prev => ({
+              ...prev,
+              [skill.name]: skill.level
+            }))
+          }, index * 100)
+        })
+      }
+    }, 2000) // Wait 2 seconds before fallback
+
+    return () => clearTimeout(fallbackTimer)
+  }, [animatedValues])
 
   const filteredSkills = selectedCategory 
     ? skillsData.filter(skill => skill.category === selectedCategory)
