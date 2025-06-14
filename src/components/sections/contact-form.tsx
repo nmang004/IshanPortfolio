@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { 
   User, Mail, MessageSquare,
   FileText, Send, Check, Upload, X 
@@ -54,7 +54,6 @@ const urgencyLevels = [
 ]
 
 export function ContactForm() {
-  const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
@@ -76,27 +75,6 @@ export function ContactForm() {
   })
 
   const watchedValues = watch()
-
-  const nextStep = useCallback(async () => {
-    let fieldsToValidate: (keyof ContactFormData)[] = []
-    
-    if (currentStep === 1) {
-      fieldsToValidate = ['firstName', 'lastName', 'email']
-    } else if (currentStep === 2) {
-      fieldsToValidate = ['inquiryType', 'subject']
-    }
-
-    const isStepValid = await trigger(fieldsToValidate)
-    if (isStepValid && currentStep < 3) {
-      setCurrentStep(currentStep + 1)
-    }
-  }, [currentStep, trigger])
-
-  const prevStep = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1)
-    }
-  }
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
@@ -141,7 +119,6 @@ export function ContactForm() {
         </p>
         <Button onClick={() => {
           setIsSubmitted(false)
-          setCurrentStep(1)
         }}>
           Send Another Message
         </Button>
@@ -151,42 +128,9 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Progress Indicator */}
-      <div className="flex items-center justify-between mb-8">
-        {[1, 2, 3].map((step) => (
-          <div key={step} className="flex items-center">
-            <div
-              className={cn(
-                'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium',
-                step <= currentStep
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground'
-              )}
-            >
-              {step < currentStep ? <Check className="w-4 h-4" /> : step}
-            </div>
-            {step < 3 && (
-              <div
-                className={cn(
-                  'h-1 w-16 mx-2',
-                  step < currentStep ? 'bg-primary' : 'bg-muted'
-                )}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-
-      <AnimatePresence mode="wait">
-        {/* Step 1: Personal Information */}
-        {currentStep === 1 && (
-          <motion.div
-            key="step1"
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -20, opacity: 0 }}
-            className="space-y-4"
-          >
+      <div className="space-y-6">
+        {/* Personal Information */}
+        <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Personal Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -237,18 +181,10 @@ export function ContactForm() {
                 className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600"
               />
             </div>
-          </motion.div>
-        )}
+        </div>
 
-        {/* Step 2: Inquiry Details */}
-        {currentStep === 2 && (
-          <motion.div
-            key="step2"
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -20, opacity: 0 }}
-            className="space-y-4"
-          >
+        {/* Inquiry Details */}
+        <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Inquiry Details</h3>
               
@@ -321,18 +257,10 @@ export function ContactForm() {
                 </div>
               </div>
             </div>
-          </motion.div>
-        )}
+        </div>
 
-        {/* Step 3: Message and Options */}
-        {currentStep === 3 && (
-          <motion.div
-            key="step3"
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -20, opacity: 0 }}
-            className="space-y-4"
-          >
+        {/* Message and Options */}
+        <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Your Message</h3>
               
@@ -437,44 +365,29 @@ export function ContactForm() {
                 </label>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-between pt-6">
+      {/* Submit Button */}
+      <div className="flex justify-center pt-8">
         <Button
-          type="button"
-          variant="outline"
-          onClick={prevStep}
-          disabled={currentStep === 1}
+          type="submit"
+          disabled={!isValid || isSubmitting}
+          size="lg"
+          className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px]"
         >
-          Previous
+          {isSubmitting ? (
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Sending...
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <Send className="w-4 h-4" />
+              Send Message
+            </div>
+          )}
         </Button>
-
-        {currentStep < 3 ? (
-          <Button type="button" onClick={nextStep}>
-            Next
-          </Button>
-        ) : (
-          <Button
-            type="submit"
-            disabled={!isValid || isSubmitting}
-            className="min-w-[120px]"
-          >
-            {isSubmitting ? (
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                Sending...
-              </div>
-            ) : (
-              <div className="flex items-center gap-2">
-                <Send className="w-4 h-4" />
-                Send Message
-              </div>
-            )}
-          </Button>
-        )}
       </div>
     </form>
   )
