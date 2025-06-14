@@ -36,7 +36,7 @@ export async function ProjectsGrid() {
             Research Portfolio
           </Badge>
         </div>
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl bg-gradient-to-r from-gray-900 to-blue-900 dark:from-white dark:to-blue-100 bg-clip-text text-transparent">
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl text-foreground">
           Research Projects
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">

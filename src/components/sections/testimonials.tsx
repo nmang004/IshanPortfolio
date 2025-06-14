@@ -27,7 +27,7 @@ export async function Testimonials() {
             </Badge>
           </div>
           
-          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl bg-gradient-to-r from-gray-900 to-purple-900 dark:from-white dark:to-purple-100 bg-clip-text text-transparent">
+          <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl text-foreground">
             What People Say
           </h2>
           
