@@ -60,6 +60,8 @@ export const getCSPHeader = (nonce?: string) => {
       'https://cdn.sanity.io',
       'https://*.apicdn.sanity.io', // Sanity API CDN
       'https://ne7sn5va.apicdn.sanity.io', // Specific Sanity project API
+      'https://ne7sn5va.api.sanity.io', // Direct Sanity API (non-CDN)
+      'https://*.api.sanity.io', // Sanity API wildcard
       'https://*.vercel-analytics.com',
       'https://*.vercel-insights.com',
       'https://www.google-analytics.com',
