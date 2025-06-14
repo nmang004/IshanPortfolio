@@ -122,9 +122,6 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   
-  // Handle trailing slash consistently
-  trailingSlash: false,
-  
   // External packages for server components
   serverExternalPackages: ['@sanity/client'],
   
@@ -240,12 +237,6 @@ const nextConfig: NextConfig = {
       {
         source: '/portfolio.html',
         destination: '/projects',
-        permanent: true,
-      },
-      // Ensure consistent routing without trailing slashes
-      {
-        source: '/:path*/',
-        destination: '/:path*',
         permanent: true,
       },
     ]
