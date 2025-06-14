@@ -20,9 +20,11 @@ export function Header() {
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
 
-  // Debug the state changes
+  // Debug the state changes in development
   useEffect(() => {
-    console.log('Mobile menu state changed:', mobileMenuOpen)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Mobile menu state changed:', mobileMenuOpen)
+    }
   }, [mobileMenuOpen])
 
   // Prevent hydration issues
@@ -57,7 +59,7 @@ export function Header() {
   }, [mobileMenuOpen])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-[60] w-full border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
       {/* Debug info - remove in production */}
       {process.env.NODE_ENV === 'development' && (
         <div className="fixed top-20 left-4 bg-red-500 text-white p-2 text-xs z-[9999] md:hidden">
@@ -66,7 +68,14 @@ export function Header() {
       )}
       <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link 
+            href="/" 
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200"
+            onClick={() => {
+              // Ensure mobile menu closes when navigating home
+              setMobileMenuOpen(false)
+            }}
+          >
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               Ishan Perera
             </span>
@@ -75,7 +84,16 @@ export function Header() {
         
         <nav className="hidden md:flex items-center space-x-8">
           {navigation.map((item) => {
-            const isActive = mounted && (pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
+            let isActive = false
+            if (mounted) {
+              if (item.href === '/') {
+                // Home page: only active when exactly on home
+                isActive = pathname === '/'
+              } else {
+                // Other pages: active when path matches or starts with the href
+                isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+              }
+            }
             return (
               <Link
                 key={item.name}
@@ -99,13 +117,12 @@ export function Header() {
           
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200 relative z-50"
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
               const newState = !mobileMenuOpen
               setMobileMenuOpen(newState)
-              console.log('Hamburger clicked, new state:', newState)
             }}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -136,7 +153,7 @@ export function Header() {
         <>
           {/* Mobile menu overlay */}
           <div 
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden z-40"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden z-[55]"
             onClick={(e) => {
               e.preventDefault()
               setMobileMenuOpen(false)
@@ -145,12 +162,21 @@ export function Header() {
           {/* Mobile menu content */}
           <div 
             id="mobile-menu"
-            className="border-t border-gray-200 dark:border-gray-800 md:hidden bg-white dark:bg-gray-900 relative z-50 shadow-lg"
+            className="border-t border-gray-200 dark:border-gray-800 md:hidden bg-white dark:bg-gray-900 relative z-[58] shadow-lg"
           >
             <nav className="container mx-auto px-4 py-6">
               <div className="flex flex-col space-y-4">
                 {navigation.map((item) => {
-                  const isActive = mounted && (pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)))
+                  let isActive = false
+                  if (mounted) {
+                    if (item.href === '/') {
+                      // Home page: only active when exactly on home
+                      isActive = pathname === '/'
+                    } else {
+                      // Other pages: active when path matches or starts with the href
+                      isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+                    }
+                  }
                   return (
                     <Link
                       key={item.name}
